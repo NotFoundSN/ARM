@@ -23,8 +23,8 @@ Maldonado Julio, nicoleño, técnico informatico, estudiante de full stack web y
 
 | link | referencia |
 |-----|--------------|
-| 1 | |
-| 2 | |
-| 3 | |
+| https://www.g2a.com/ | paleta de colores y diseño |
+| https://www.kinguin.net/ | vista de los productos |
+| https://www.instant-gaming.com/es/ | carro de compras |
 | 4 | |
 | 5 | |

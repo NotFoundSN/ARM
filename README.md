@@ -21,4 +21,8 @@ Maldonado Julio, nicoleño, técnico informatico, estudiante de full stack web y
 
 ## Referentes
 
-  * https://www.g2a.com/
+  * 1
+  * 2
+  * 3
+  * 4
+  * 5

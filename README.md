@@ -1,2 +1,4 @@
 # Grupo_2_ARM
-Proyecto de e-commers, grupo 2
+
+Master of consoles es una empresa dedicada a la venta de consolas de video juegos, juegos de consolas y accesorios para las mismas.
+Nuestro publico objetivo son todos los gamers de argentina.

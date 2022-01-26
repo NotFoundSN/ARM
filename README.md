@@ -1,6 +1,8 @@
 # Grupo_2_ARM
 Proyecto integrador grupo 2 - Digital House
 
+Tienda **Master of consoles**
+
 ## Descripción del proyecto
 ### Productos
 Venta de accesorios y componentes para pc como tambien para consolas. También contará con videojuegos para diversas plataformas y toda la información necesaria para estos.

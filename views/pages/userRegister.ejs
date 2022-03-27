@@ -8,13 +8,13 @@
     <body>
         <%= include('./partials/header') %>
         <section>
-            <%= include('./partials/categories') %>
+            <%= include('../partials/categories') %>
             <div>
                 <% juegos.forEach((juego)=>{ %>
-                    <%= include('./partials/register') %>
+                    <%= include('../partials/register') %>
                 <% }); %>
             </div>
         </section>
-        <%= include('./partials/footer') %>
+        <%= include('../partials/footer') %>
     </body>
 </html>

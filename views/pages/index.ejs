@@ -6,15 +6,17 @@
         <link rel='stylesheet' href='/stylesheets/style.css' />
     </head>
     <body>
-        <%= include('../partials/header') %>
-        <section>
-            <%= include('../partials/categories') %>
+        <header>
+            <%- include('../partials/header') %>
+        </header>
+        <section><!--
+            <%- include('../partials/categories') %>
             <div>
-                <% juegos.forEach((juego)=>{ %> 
-                    <%= include('../partials/productArticle') %>
-                <% }); %>
-            </div>
+                
+            </div>-->
         </section>
-        <%= include('../partials/footer') %>
+        <footer>
+            <%- include('../partials/footer') %>
+        </footer>
     </body>
 </html>

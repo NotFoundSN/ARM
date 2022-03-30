@@ -10,13 +10,53 @@
   --base-font-family: 'Roboto', sans-serif
 }
 
+* {
+  margin: 0;
+}
+
 body {
+  background-color: var(--blanco);
   padding: 50px;
   width: 100vw;
   height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
 }
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100vw;
+  background-color: var(--oscuro);
+}
+
+.bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: var(--violeta);
+}
+
+.menu{
+  display:flex;
+  background-color: var(--oscuro);
+  color: #9999C3;
+  flex-direction: column;
+  width: 12vw;
+}
+
+.menu ul{
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+
+
 
 .celeste {
   color: #00B7FF;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
 }

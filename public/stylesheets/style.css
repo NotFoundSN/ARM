@@ -31,13 +31,6 @@ header {
   background-color: var(--oscuro);
 }
 
-.bar{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  color: var(--violeta);
-}
-
 .menu{
   display:flex;
   background-color: var(--oscuro);
@@ -51,9 +44,6 @@ header {
   flex-direction: column;
   list-style-type: none;
 }
-
-
-
 
 .celeste {
   color: #00B7FF;

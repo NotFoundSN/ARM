@@ -23,36 +23,70 @@ body {
   padding: 0;
 }
 
+/*====== Header ======*/
 header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-content: center;
   width: 100vw;
   background-color: var(--oscuro);
+  color: var(--violeta);
+  font-size: 0.8rem;
 }
-.bar{
+
+footer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: var(--violeta);
+  background-color: var(--violeta);
 }
 
-.menu{
-  display:flex;
-  background-color: var(--oscuro);
-  color: #9999C3;
-  flex-direction: column;
-  width: 12vw;
-}
-
-.menu ul{
-  display: flex;
-  flex-direction: column;
+footer ul{
   list-style-type: none;
+}
+
+/*====== menu lateral ======*/
+.menu{
+  display:none;
 }
 
 .celeste {
   color: #00B7FF;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
+}
+.form-login{
+  display: none;
+}
+
+@media (min-width: 570px) {
+  .form-login{
+    display: block;
+  }
+  header{
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1040px) {
+
+  .menu-icon{
+    display: none;
+  }
+
+  .menu{
+    display:flex;
+    background-color: var(--oscuro);
+    color: #9999C3;
+    flex-direction: column;
+    width: 12vw;
+  }
+  
+  .menu ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+  }
+  
 }

@@ -1,12 +1,15 @@
 let AdminRenderController = {
-    loginAdmin: (req,res) => {
-        res.render('login');
+    logInAdmin: (req,res) => {
+        res.render('admin/login');
+    },
+    logOutAdmin: (req,res) => {
+        res.render('index');
     },
     addProduct: (req,res) => {
-        res.render('addProduct');
+        res.render('admin/addProduct');
     },
     editProduct: function(req,res){
-        res.render('editProduct');
+        res.render('admin/editProduct');
     },
 };
 

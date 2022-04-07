@@ -41,6 +41,7 @@ section {
   justify-content: flex-start;
 }
 
+/*====== Productos ======*/
 .products {
   padding-top: 5px;
   padding-bottom: 5px;
@@ -54,6 +55,7 @@ section {
   gap: 5px;
 }
 
+/*====== Tarjeta de producto ======*/
 .product {
   width: 180px;
   height: 200px;
@@ -111,6 +113,8 @@ section {
   width: 100%;
   height: 100px;
 }
+
+/*====== Footer ======*/
 
 footer{
   display: flex;

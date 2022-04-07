@@ -9,7 +9,7 @@ module.exports = {
     },
     // Registrarse
     signUp: (req,res) => {
-        //
+        res.render('userRegister.ejs');
     },
     updateUser: (req,res) => {
         //

@@ -16,23 +16,14 @@
 }
 
 body {
-  background-color: var(--blanco);
-  padding: 50px;
-  width: 100vw;
-  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  padding: 0;
 }
 
 /*====== Header ======*/
 header {
-
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-content: center;
-  width: 100vw;
-  background-color: var(--oscuro);
   color: var(--azul);
   font-size: 0.8rem;
 }
@@ -163,12 +154,11 @@ section {
 /*====== Footer ======*/
 
 footer {
-  position:relative;
+  position: sticky;
   bottom: 0;
-  display: flex;
+  display: block;
   flex-direction: row;
   justify-content: space-between;
-  background-color: var(--azul);
 }
 
 footer ul {

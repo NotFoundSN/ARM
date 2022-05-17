@@ -16,24 +16,14 @@
             <%- include('../partials/categories') %>
             <div class="ml-5 products text-left">
                 <div class='register'>
-                    <h3 class="p-3">Registro del usuario</h3>
-                    <p class="pl-4 pb-4 pr-4 pt-0">Complete los siguientes campos para poder registrarse en nuestra plataforma</p>
+                    <h3 class="p-3">Iniciar sesión</h3>
+                    <p class="pl-4 pb-4 pr-4 pt-0">Ingrese sus datos de acceso para continuar</p>
                     <form action="" class="register w-100">
-                        <label for="name">Nombre:</label>
+                        <label for="name"><i class="fas fa-user"></i> Nombre de usuario</label>
                         <input class="form-control d-block" id="name" type="text" name="name" required>
-                        <label for="surname">Apellido:</label>
-                        <input class="form-control d-block" id="surname" type="text" name="surname" required>
-                        <label for="mail">E-mail:</label>
-                        <input class="form-control d-block" id="mail" type="email" name="mail" required>
-                        <label for="pass">Contraseña:</label>
+                        <label for="pass"><i class="fas fa-lock"></i> Contraseña</label>
                         <input class="form-control d-block" id="pass" type="password" name="pass" required>
-                        <label for="pass2">Repetir la contraseña:</label>
-                        <input class="form-control d-block" id="pass2" type="password" name="pass2" required>
-                        <label for="dni">DNI:</label>
-                        <input class="form-control d-block" id="dni" type="number" name="dni">
-                        <label for="bornDate">Fecha de nacimiento: </label>
-                        <input class="form-control d-block" id="bornDate" type="date" name="bornDate" required>
-                        <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="button">Registrarse</button>
+                        <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="button">Ingresar</button>
                     </form>
                 </div>
             </div>

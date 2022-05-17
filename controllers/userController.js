@@ -1,7 +1,7 @@
 module.exports = {
     // Iniciar sesion
     signIn: (req,res) => {
-        res.render('login');
+        res.render('login.ejs');
     },
     // Cerrar sesion
     signOff: (req,res) => {

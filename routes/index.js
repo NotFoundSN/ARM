@@ -1,10 +1,11 @@
 var express = require('express');
-const { route } = require('express/lib/application');
 var router = express.Router();
 const {adminRender, adminFunction} = require('../controllers/adminController');
 const userController = require('../controllers/userController');
 const productsController = require('../controllers/productsController');
 const cartController = require('../controllers/carritoController');
+
+const registerUserMiddleware = require('../middleware/registerUserMiddleware');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,20 +17,30 @@ router.get('/home', function(req, res, next) {
 
 // ADMIN
 router.get('/admin', adminRender.loginAdmin);
+router.post('/admin', /* logica para login */)
+
 router.get('/admin/addProduct', adminRender.addProduct);
-router.get('/admin/editProduct', adminRender.editProduct);
+router.post('/admin/addProduct', /* logica agregar producto*/);
+
+router.get('/admin/editProduct/:id', adminRender.editProduct);
+router.put('/admin/editProduct/:id', /* logica de editar producto*/);
+
+router.delete(/*borrar*/)
+
 
 // User
 router.get('/login', userController.signIn);
+router.post('/login', /* logica login */)
 router.get('logout', userController.signOff);
+
 router.get('/register', userController.signUp);
-router.get('/user/update', userController.updateUser);
+router.post('/register', registerUserMiddleware, /*logica registro*/);
+
 router.get('/user', userController.getData);
+router.put('/user/update', userController.updateUser);
 
 // Productos
 router.get('/productos/:id', productsController.getProduct);
-//Julio:  este no seria el index?
-//Manu:   No, el index renderiza la visual, este retorna los datos de los productos
 router.get('/productos', productsController.listProducts); 
 router.get('/productos/:nombre', productsController.searchProduct);
 

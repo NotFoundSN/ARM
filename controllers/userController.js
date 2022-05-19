@@ -10,6 +10,15 @@ module.exports = {
     // Registrarse
     signUp: (req,res) => {
         res.render('userRegister.ejs');
+        /*let usuario = {
+                        nombre = req.body.name;
+                        apellido = req.body.surname;
+                        mail = req.body.mail;
+                        pass = req.body.pass;
+                        pass2 = req.body.pass2;
+                        dni = req.body.dni;
+                        fecha = req.body.bornDate;
+                    }*/
     },
     updateUser: (req,res) => {
         res.render('update');

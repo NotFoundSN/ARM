@@ -3,7 +3,7 @@ module.exports = {
         res.send();
     },
     getProduct: (req,res) => {
-        res.render('productdetails');
+        res.render('productDetails.ejs');
     },
     searchProduct: (req,res) => {
         res.send();

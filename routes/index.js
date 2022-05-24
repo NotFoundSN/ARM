@@ -27,10 +27,13 @@ router.get('/user/update', userController.updateUser);
 router.get('/user', userController.getData);
 
 // Productos
+router.get('/productos',function(req, res, next) {
+  res.redirect('/');
+});
+
 router.get('/productos/:id', productsController.getProduct);
 //Julio:  este no seria el index?
 //Manu:   No, el index renderiza la visual, este retorna los datos de los productos
-router.get('/productos', productsController.listProducts); 
 router.get('/productos/:nombre', productsController.searchProduct);
 
 // Carrito

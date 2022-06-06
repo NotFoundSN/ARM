@@ -1,16 +1,13 @@
-<article class="productDetail">
-    <a href="/productDetails">
-        <div>
-            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_964280-MLA46869170141_072021-F.webp">
-        </div>
-        <div>
-            <ul class="productStats">
-                <br>
-                <li class="productName">Play station 4 + juego</li>
-                <li class="productPrice">$113.999</li>
-                <li class="productDiscount">%Descuento</li>
-                <li class="productDescription">Poli estation 4, 250mb de espacio, + juego de regalo a eleccion (pong o tetris)</li>
-            </ul>
-        </div>
-    </a>
-</article>
+<form class="register">
+    <label for="name">Producto:</label>
+    <input value="<%= producto.nombre %>" class="form-control d-block" id="name" type="text" name="name" required>
+    <label for="price">Precio:</label>
+    <input value="<%= producto.precio %>" class="form-control d-block" id="price" type="number" name="price" required>
+    <label for="discount">Descuento:</label>
+    <input value="<%= producto.descuento %>" class="form-control d-block" id="discount" type="number" name="discount" required>
+    <label for="description">Descripcion:</label>
+    <input value="<%= producto.descripcion %>" class="form-control d-block" id="description" type="text" name="description" required>
+    <label for="image">Imagen:</label>
+    <input value="<%= producto.imagen %>" class="form-control d-block" id="image" type="text" name="image" required>
+    <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="button">Registrarse</button>
+</form>

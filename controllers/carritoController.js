@@ -1,3 +1,6 @@
+const db = require('../database/models');
+const sequelize = db.sequelize;
+
 module.exports = {
     addProduct: (req,res) => {
         //

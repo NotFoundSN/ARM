@@ -48,16 +48,21 @@ section {
   flex-wrap: wrap;
   gap: 5px;
 }
+.products a {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
 
 /*====== Tarjeta de producto ======*/
 .product {
+  border-radius: 5px;
   width: 180px;
   height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-content: space-between;
-  background-color: var(--azul);
   padding: 5px;
 }
 

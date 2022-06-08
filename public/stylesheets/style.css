@@ -18,9 +18,7 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-a : hover {
-  
-}
+
 /*====== Header ======*/
 header {
   display: flex;

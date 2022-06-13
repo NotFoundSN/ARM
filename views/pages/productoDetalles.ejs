@@ -13,9 +13,10 @@
     <body>
         <%- include('../partials/header') %>
         <section>
-            <h1><%= message %></h1>
-            <h2><%= error.status %></h2>
-            <pre><%= error.stack %></pre>
+            <%- include('../partials/categories') %>
+            <div class="ml-5 products text-left">
+                <%- include('../partials/productDetails') %>
+            </div>
         </section>
         <%- include('../partials/footer') %>
     </body>

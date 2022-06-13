@@ -6,17 +6,219 @@
   --oscuro: #273043;
   --naranja: #E88D67;
   --blanco: #EFF6EE;
+  --azul: #1a67a3;
   --violeta: #9999C3;
   --base-font-family: 'Roboto', sans-serif
 }
 
+* {
+  margin: 0;
+}
+
 body {
-  padding: 50px;
-  width: 100vw;
-  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a : hover {
+  
+}
+/*====== Header ======*/
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 0.8rem;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/*====== Productos ======*/
+.products {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.products a {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/*====== Tarjeta de producto ======*/
+.product {
+  border-radius: 5px;
+  width: 180px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: space-between;
+  padding: 5px;
+}
+
+.productStats {
+  width: 100%;
+  text-align: justify;
+  list-style-type: none;
+  list-style-position: unset;
+  margin: 0;
+  padding: 0;
+}
+
+.product a {
+  text-decoration: none;
+}
+
+.productName {
+  list-style-type: none;
+  list-style-position: outside;
+  text-align: center;
+  border-color: var(--oscuro);
+  font-size: 1rem;
+  font-family: var(--base-font-family);
+  font-weight: bold;
+}
+
+.productPrice {
+  list-style-type: none;
+  list-style-position: outside;
+  text-align: center;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.productDiscount {
+  list-style-type: none;
+  list-style-position: outside;
+  text-align: center;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.product img {
+  width: 100%;
+  height: 100px;
+}
+
+.productDetail {
+  width: 80vw;
+  height: 40vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: space-between;
+  background-color: var(--violeta);
+  padding: 5px;
+}
+
+.productDetail img {
+  width: 100%;
+  height: 250px;
+}
+
+.productDetail .productStats {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  width: 40vw;
+}
+
+.productDetail .productStats .productName {
+  list-style-type: none;
+  list-style-position: outside;
+  text-align: center;
+  border-color: var(--oscuro);
+  font-size: 2rem;
+  font-family: var(--base-font-family);
+  font-weight:bolder;
+}
+
+/*====== Registro ======*/
+.register {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+/*====== Footer ======*/
+
+footer {
+  position: sticky;
+  bottom: 0;
+  display: block;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+/*====== menu lateral ======*/
+.menu {
+  display: none;
 }
 
 .celeste {
-  color: #00B7FF;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+}
+
+.form-login {
+  display: none;
+}
+
+@media (min-width: 570px) {
+  .form-login {
+    display: block;
+  }
+
+  .form-login form {
+    border-radius: 12px;
+  }
+
+  header {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1040px) {
+  .products {
+    width: 88vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    background-color: #333739;
+    flex-direction: column;
+    width: 12vw;
+    height: 100vh;
+  }
+
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+  }
+
 }

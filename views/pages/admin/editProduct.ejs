@@ -12,24 +12,25 @@
     </head>
     <body>
         <%- include('../../partials/header') %>
-        <section>
-            <form class="register">
+        <section class="justify-content-center">
+            <form class="form-group register">
                 <label for="name">Producto:</label>
-                <input id="name" type="text" name="name" required>
+                <input class="form-control" id="name" type="text" name="name" required>
                 <label for="price">Precio:</label>
-                <input id="price" type="number" name="price" required>
+                <input class="form-control" id="price" type="number" name="price" required>
                 <label for="discount">Descuento:</label>
-                <input id="discount" type="number" name="discount" required>
+                <input class="form-control" id="discount" type="number" name="discount" required>
                 <label for="description">Descripcion:</label>
-                <input id="description" type="text" name="description" required>
+                <input class="form-control" id="description" type="text" name="description" required>
                 <label for="image">Imagen:</label>
-                <input id="image" type="file" name="image" required>
+                <input class="form-control" id="image" type="file" name="image" required>
                 <label for="image">moneda:</label>
-                <select>
+                <select class="form-control">
                 	<option value="ARS">Pesos Argentinos (AR$)</option>
                 	<option value="USD">Dolar Internacional (U$D)</option>
                 </select>
-                <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="button">Registrarse</button>
+                <button name="register" class="btn btn-sm btn-success mt-3 w-100" type="button">Guardar cambios</button>
+                <button name="register" class="btn btn-sm btn-danger mt-3 w-100" type="button">Eliminar</button>
             </form>
         </section>
     </body>

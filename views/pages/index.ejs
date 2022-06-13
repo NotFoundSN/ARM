@@ -12,13 +12,13 @@
     </head>
     <body>
         <%- include('../partials/header') %>
-        <section>
+        <section class="row">
             <%- include('../partials/categories') %>
             <% for( let i = 0; i < productos.length; i++ ) { %>
-            <div class="products">
+            <div class="products col-10 col-lg-3">
                 <article class="product bg-info text-white text-center">
                     <a href="/productos/<%= productos[i].id %>">
-                        <img src="<%= productos[i].imagen %>">
+                        <img src="/img/productosImagenes/<%= productos[i].imagen %>">
                         <p class="productName"><%= productos[i].nombre %></p>
                         <p class="productPrice"><%= productos[i].moneda + ' $' +productos[i].precio %></p>
                         <% if(productos[i].descuento) { %>

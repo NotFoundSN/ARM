@@ -22,8 +22,8 @@
                 </div>
             </div>
             <form class="col-10 col-md-7" action="/admin/producto/add" enctype="multipart/form-data" method="POST">
-                <label for="name">Producto:</label>
-                <input class="form-control" id="name" type="text" name="name" required>
+                <label for="name">Nombre:</label>
+                <input class="form-control" id="name" type="text" name="nombre" required>
                 <label for="price">Precio:</label>
                 <input class="form-control" id="price" type="number" name="price" required>
                 <label for="discount">Descuento:</label>
@@ -32,12 +32,12 @@
                 <input class="form-control" id="description" type="text" name="description" required>
                 <label for="image">Imagen:</label>
                 <input class="form-control" id="image" type="file" name="image" required>
-                <label for="image">moneda:</label>
-                <select class="form-control">
+                <label for="image">Moneda:</label>
+                <select class="form-select">
                     <option value="ARS">Pesos Argentinos (AR$)</option>
                     <option value="USD">Dolar Internacional (U$D)</option>
                 </select>
-                <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="button">Registrarse</button>
+                <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="submit">Registrarse</button>
             </form>
         </div>
     </body>

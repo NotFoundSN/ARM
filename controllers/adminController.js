@@ -5,34 +5,43 @@ let AdminRender = {
     login: (req,res) => {
         res.render('admin/login');
     },
-    addProduct: (req,res) => {
+
+    add: (req,res) => {
         res.render('admin/addProduct');
     },
-    editProduct: function(req,res){
-        res.render('admin/editProduct');
+
+    edit: function(req,res){
+        db.Producto.findByPk(req.params.id).then((producto)=>{
+            return res.render('admin/editProduct.ejs',{producto});
+        });
     },
 };
 
 let AdminFunctions = {
-    addProducto: function (req,res) {
-        let imagenFile = req.file;
-        if(imagenFile === undefined){
-            return res.send('No ingreso la imagen del producto');
+    add: function (req,res) {
+        if(req.file === undefined){
+            return res.render('admin/addProduct');
         }
         db.Producto.create( {
             nombre : req.body.nombre,
             precio : req.body.precio,
             descuento : req.body.descuento,
             descripcion : req.body.descripcion,
-            imagen : req.body.imagen,
-        }).then(()=> {
-            return res.redirect('/movies')})            
-        .catch(error => res.send(error));
+            imagen : req.file.filename,
+        }).then((product)=>{
+            res.redirect('/productos/' + product.id)
+        }).catch((error)=>{
+            res.send(error);
+        });
     },
-    deleteProduct: (req,res) => {
-        //
+
+    update: (req,res) => {
+        db.Producto.findByPk(req.params.id).then((producto)=>{
+            return res.render('admin/editProduct.ejs',{producto});
+        });
     },
-    editProduct: (req,res) => {
+
+    delete: (req,res) => {
         //
     },
 };

@@ -1,18 +1,18 @@
-/*                        **frontend**
-                        trim(name).length > 0
-                        trim(surname).length > 0
-                        mail != null && formato
-                        pass != null && segura
-                        pass2 == pass && segura
-                        dni typeof Number && dni.length >=8
-                        bornDate(fechanacimiento) < now()
-                        **backend
-                        trim(name).length > 0
-                        trim(surname).length > 0
-                        mail != null && formato && no exista en la base
-                        pass != null && segura?
-                        dni typeof Number && dni.length >=8
-                        bornDate(fechanacimiento) < now()*/
+/***frontend**
+trim(name).length > 0
+trim(surname).length > 0
+mail != null && formato
+pass != null && segura
+pass2 == pass && segura
+dni typeof Number && dni.length >=8
+bornDate(fechanacimiento) < now()
+**backend
+trim(name).length > 0
+trim(surname).length > 0
+mail != null && formato && no exista en la base
+pass != null && segura?
+dni typeof Number && dni.length >=8
+bornDate(fechanacimiento) < now()*/
 const registerUserMiddleware = (req, res, next) => {
     let errores=0;
     /**** Nombre  ****/

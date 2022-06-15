@@ -1,13 +1,13 @@
-/*                   **frontend**
-                    product != null
-                    price> 0
-                    0<= discount <= 100
-                    image sea url
-                    **backend
-                    product != null && no exista
-                    price > 0
-                    0<= discount <= 100
-                    image sea url */
+/***frontend**
+product != null
+price> 0
+0<= discount <= 100
+image sea url
+**backend
+product != null && no exista
+price > 0
+0<= discount <= 100
+image sea url */
 const addProductMiddleware = (req,res,next) => {
     let errores = 0;
 

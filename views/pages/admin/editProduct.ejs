@@ -12,26 +12,33 @@
     </head>
     <body>
         <%- include('../../partials/header') %>
-        <section class="justify-content-center">
-            <form class="form-group register">
-                <label for="name">Producto:</label>
-                <input class="form-control" id="name" type="text" name="name" required>
+        <div class="row justify-content-center mb-4">
+            <div class="col-10 col-md-7">
+                <h3 class="d-block">Editar un producto</h3>
+                <div class="alert alert-light mb-0">
+                    <p class="mb-0">
+                        <slot name="subTitle">En este apartado podra modificar un producto ya cargado. Modifique los campos con los datos necesarios para poder guardarlo</slot>
+                    </p>
+                </div>
+            </div>
+            <form class="col-10 col-md-7" action="/admin/producto/add" enctype="multipart/form-data" method="POST">
+                <label for="name">Nombre:</label>
+                <input class="form-control mb-2" id="name" type="text" name="nombre" value="<%= producto.nombre%>" required>
                 <label for="price">Precio:</label>
-                <input class="form-control" id="price" type="number" name="price" required>
+                <input class="form-control mb-2" id="price" type="number"  value="<%= producto.precio%>" name="precio" required>
                 <label for="discount">Descuento:</label>
-                <input class="form-control" id="discount" type="number" name="discount" required>
+                <input class="form-control mb-2" id="discount" type="number"  value="<%= producto.descuento%>" placeholder="Sin descuento" name="descuento" required>
                 <label for="description">Descripcion:</label>
-                <input class="form-control" id="description" type="text" name="description" required>
+                <input class="form-control mb-2" id="description" type="text"  value="<%= producto.descripcion%>" placeholder="Sin descripcion" name="descripcion" required>
                 <label for="image">Imagen:</label>
-                <input class="form-control" id="image" type="file" name="image" required>
-                <label for="image">moneda:</label>
-                <select class="form-control">
-                	<option value="ARS">Pesos Argentinos (AR$)</option>
-                	<option value="USD">Dolar Internacional (U$D)</option>
+                <input class="form-control mb-2" id="image" type="file" name="image" required>
+                <label for="image">Moneda:</label>
+                <select class="custom-select" name="moneda">
+                    <option value="ARS">Pesos Argentinos (AR$)</option>
+                    <option value="USD">Dolar Internacional (U$D)</option>
                 </select>
-                <button name="register" class="btn btn-sm btn-success mt-3 w-100" type="button">Guardar cambios</button>
-                <button name="register" class="btn btn-sm btn-danger mt-3 w-100" type="button">Eliminar</button>
+                <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="submit">Registrarse</button>
             </form>
-        </section>
+        </div>
     </body>
 </html>

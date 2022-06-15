@@ -22,14 +22,16 @@ let AdminFunctions = {
         if(req.file === undefined){
             return res.render('admin/addProduct');
         }
-        db.Producto.create( {
+
+        db.Producto.create({
             nombre : req.body.nombre,
             precio : req.body.precio,
             descuento : req.body.descuento,
             descripcion : req.body.descripcion,
             imagen : req.file.filename,
+            moneda : req.body.moneda,
         }).then((product)=>{
-            res.redirect('/productos/' + product.id)
+            res.redirect('/productos/' + product.id);
         }).catch((error)=>{
             res.send(error);
         });

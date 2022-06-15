@@ -3,7 +3,9 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const methodOverride = require("method-override");
 
+/* //Rutas// */
 var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var carritoRouter = require('./routes/carrito');
@@ -21,6 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride("_method"));
 
 //Rutas
 app.use('/', indexRouter);

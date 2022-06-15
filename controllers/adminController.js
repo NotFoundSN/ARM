@@ -4,16 +4,34 @@ const sequelize = db.sequelize;
 let AdminRender = {
     login: (req,res) => {
         res.render('admin/login');
+        /*let usuario = {
+            usuario = req.body.user;
+            pass = req.body.password;
+        }*/
     },
 
     add: (req,res) => {
         res.render('admin/addProduct');
+        /*let producto = {
+            nombre = req.body.name;
+            precio = req.body.price;
+            descuento = req.body.discount;
+            descripcion = req.body.description;
+            image = req.body.image;
+        };*/
     },
 
     edit: function(req,res){
         db.Producto.findByPk(req.params.id).then((producto)=>{
             return res.render('admin/editProduct.ejs',{producto});
         });
+        /*let producto = {
+            nombre = req.body.name;
+            precio = req.body.price;
+            descuento = req.body.discount;
+            descripcion = req.body.description;
+            image = req.body.image;
+        }*/
     },
 };
 

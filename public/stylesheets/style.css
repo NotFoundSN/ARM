@@ -26,6 +26,10 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+<<<<<<< HEAD
+=======
+  color: var(--azul);
+>>>>>>> cambiosJulio
   font-size: 0.8rem;
 }
 
@@ -67,7 +71,7 @@ section {
 }
 
 .productStats {
-  width: 100%;
+  width: 100;
   text-align: justify;
   list-style-type: none;
   list-style-position: unset;
@@ -119,6 +123,14 @@ section {
   align-content: space-between;
   background-color: var(--violeta);
   padding: 5px;
+}
+
+.productDescription {
+  list-style-type: none;
+  list-style-position: outside;
+  text-align: center;
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 .productDetail img {
@@ -179,6 +191,10 @@ footer ul {
   display: none;
 }
 
+.home {
+  display: none;
+}
+
 @media (min-width: 570px) {
   .form-login {
     display: block;
@@ -194,6 +210,10 @@ footer ul {
 }
 
 @media (min-width: 1040px) {
+
+  .home {
+    display: flex;
+  }
   .products {
     width: 88vw;
     display: flex;

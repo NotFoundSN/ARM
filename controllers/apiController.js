@@ -18,7 +18,7 @@ module.exports = {
     },
     //Listar 1 producto en especifico
     producto: (req, res) => {
-        db.Producto.findByPk(req.params.id,{include : ['']})
+        db.Producto.findByPk(req.params.id)
             .then(producto => {
                 console.log(req.params.id);
                 res.json(respuesta(200, producto));

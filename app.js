@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require("method-override");
+const session = require("express-session");
 
 /* //Rutas// */
 var indexRouter = require('./routes/index');
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
+app.use(session({secret:"MoCGrupo2"}));
 
 //Rutas
 app.use('/', indexRouter);
@@ -32,7 +34,7 @@ app.use('/admin', adminRouter);
 app.use('/carrito', carritoRouter);
 app.use('/usuario', usuarioRouter);
 app.use('/productos', productoRouter);
-app.use('/api', apiRouter)
+app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

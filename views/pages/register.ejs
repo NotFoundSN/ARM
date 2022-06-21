@@ -18,7 +18,7 @@
                 <div class='register'>
                     <h3 class="p-3">Registro del usuario</h3>
                     <p class="pl-4 pb-4 pr-4 pt-0">Complete los siguientes campos para poder registrarse en nuestra plataforma</p>
-                    <form action="" class="register w-100">
+                    <form action="/register" method="POST" class="register w-100">
                         <label for="name">Nombre de usuario:</label>
                         <input class="form-control d-block" id="name" type="text" name="name" required>
                         <label for="name">Nombre:</label>
@@ -33,7 +33,7 @@
                         <input class="form-control d-block" id="pass" type="password" name="pass" required>
                         <label for="pass2">Repetir la contraseña:</label>
                         <input class="form-control d-block" id="pass2" type="password" name="pass2" required>
-                        <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="button">Registrarse</button>
+                        <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="button" formaction="/register">Registrarse</button>
                     </form>
                 </div>
             </div>

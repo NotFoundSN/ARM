@@ -1,38 +1,38 @@
-/*                   **frontend**
-                    product != null
-                    price> 0
-                    0<= discount <= 100
-                    image sea url
-                    **backend
-                    product != null && no exista
-                    price > 0
-                    0<= discount <= 100
-                    image sea url */
-const addProductMiddleware = (req,res,next) => {
+const {body, check} = require("express-validator");
+
+const addProductMiddleware = [
+    check("name")
+        .notEmpty().whitMessage("el campo nombre no debe estar vacio"),
+    check("price")
+        .notEmpty().whitMessage("El campo precio no debe estar vacio")
+];
+
+
+/* const addProductMiddleware = (req,res,next) => {
     let errores = 0;
 
-    /**** nombre  ****/
+    //**** nombre  ****
     if(trim(req.body.name).length<1)
     {
-        /* nombre vacio */
+        //* nombre vacio *
         errores++;
     }
-    /**** precio  ****/
+    //**** precio  ****
     if(req.body.price>0)
     {
-        /* precio invalido */
+        //* precio invalido *
         errores++;
     }
-    /**** descuento  ****/
+    //**** descuento  ****
     if((req.body.discount<0) || (req.body.discount>100))
     {
-        /* descuento invalido */
+        //* descuento invalido *
         errores++;
     }
-    /**** precio  ****/
+    //**** precio  ****
     if(trim(req.body.image).length<1)
     {
-        /* link invalido */
+        //* link invalido *
         errores++;
     }
 
@@ -44,6 +44,5 @@ const addProductMiddleware = (req,res,next) => {
     {
         res.send('Tiene errores en el formulario');
     }
-};
-
+};*/
 module.exports = addProductMiddleware;

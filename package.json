@@ -1,6 +1,6 @@
 {
-  "name": "src",
-  "version": "0.0.0",
+  "name": "Grupo 3 - ARM 'Master of consoles",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
@@ -11,6 +11,7 @@
     "bootstrap": "^5.1.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "~4.16.1",
     "express-session": "^1.17.3",
@@ -22,5 +23,15 @@
     "mysql2": "^2.3.3",
     "node-fetch": "^3.2.6",
     "sequelize": "^6.5.0"
-  }
+  },
+  "description": "Sitio dedicado a la venta de Videojuegos, consolas y accesorios para tu entretenimiento",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotFoundSN/Grupo_2_ARM.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NotFoundSN/Grupo_2_ARM/issues"
+  },
+  "homepage": "https://github.com/NotFoundSN/Grupo_2_ARM#readme"
 }

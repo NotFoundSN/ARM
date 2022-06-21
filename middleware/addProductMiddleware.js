@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const {body, check} = require("express-validator");
 
 const addProductMiddleware = [
@@ -9,6 +10,19 @@ const addProductMiddleware = [
 
 
 /* const addProductMiddleware = (req,res,next) => {
+=======
+/***frontend**
+product != null
+price> 0
+0<= discount <= 100
+image sea url
+**backend
+product != null && no exista
+price > 0
+0<= discount <= 100
+image sea url */
+const addProductMiddleware = (req,res,next) => {
+>>>>>>> 9c0fdf6f6cc0aa7fff7ffc1bb05d0e833413a15d
     let errores = 0;
 
     //**** nombre  ****

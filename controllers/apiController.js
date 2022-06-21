@@ -31,11 +31,12 @@ module.exports = {
             return res.json(respuesta(406, 'Error al subir la imagen'));
         }
         db.Producto.create({
-            nombre: req.body.nombre,
-            precio: req.body.precio,
-            descuento: req.body.descuento,
-            descripcion: req.body.descripcion,
-            imagen: req.body.imagen,
+            nombre : req.body.nombre,
+            precio : req.body.precio,
+            descuento : req.body.descuento,
+            descripcion : req.body.descripcion,
+            imagen : req.file.filename,
+            moneda : req.body.moneda,
         }).then(() => {
             return res.json(respuesta(201, this.producto))
         })

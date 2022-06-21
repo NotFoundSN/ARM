@@ -12,7 +12,7 @@ var adminRouter = require('./routes/admin');
 var carritoRouter = require('./routes/carrito');
 var usuarioRouter = require('./routes/usuario');
 var productoRouter = require('./routes/productos');
-let apiRouter = require('./routes/api');
+var apiRouter = require('./routes/api');
 
 var app = express();
 
@@ -38,7 +38,7 @@ app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  res.render('404');
 });
 
 // error handler

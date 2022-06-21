@@ -5,6 +5,7 @@ module.exports = {
     list: (req,res) => {
         db.Producto.findAll()
         .then(productos => {
+            console.log(productos);
             res.render('index.ejs', {productos})
         })
     },

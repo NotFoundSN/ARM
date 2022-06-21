@@ -26,13 +26,9 @@
                 <input class="form-control mb-2" id="image" type="file" name="image" required>
                 <label for="image">Moneda:</label>
                 <select class="custom-select" name="moneda">
-                    <option value="ARS">Pesos Argentinos (AR$)</option>
-                    <option value="USD">Dolar Internacional (U$D)</option>
-                </select>
-                <label for="image">Categoria:</label>
-                <select class="custom-select" name="categoria">
-                    <option value="ARS">Pesos Argentinos (AR$)</option>
-                    <option value="USD">Dolar Internacional (U$D)</option>
+                    <% categorias.forEach((categoria)=>{%>
+                    <option value="<%= categoria.id %>"><%= categoria.nombre %></option>
+                    <% })%>
                 </select>
                 <button name="register" class="btn btn-sm btn-success mt-3 w-100" type="submit">Guardar</button>
             </form>

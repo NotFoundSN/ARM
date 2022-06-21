@@ -5,14 +5,15 @@ const { check, validationResult } = require('express-validator');
 
 //VALIDACIONES
 const registerUserValidator = [
+    check("userName")
+        .isLength({min:6}).withMessage("Nombre Vacio"),
     check("name")
         .notEmpty().withMessage("Nombre Vacio"),
     check("surname")
         .notEmpty().withMessage("Apellido Vacio"),
-    check("email")
+    check("mail")
         .isEmail().withMessage("Correo Invalido"),
-    check("dni")
-        .isLength({min:8}).isInt().withMessage("DNI invalido")
+    
 ];
 
 //GET

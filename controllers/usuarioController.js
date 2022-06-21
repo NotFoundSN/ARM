@@ -17,12 +17,15 @@ module.exports = {
     },
     signUp: (req,res) => {
         let errores = validationResult(req);
+        console.log(errores);
         if (!errores.isEmpty()){
-            res.send("todo OK");
+            res.send("fallo algo");
+            //mostrar errores
         }
         else
         {
-            res.send("errores");
+            res.send("todo ok");
+            //registrarlo
         }
         //res.render('register.ejs');
     },

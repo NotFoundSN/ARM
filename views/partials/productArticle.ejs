@@ -1,8 +1,10 @@
-<article class="product text-center">
-    <img src="https://http2.mlstatic.com/D_NQ_NP_2X_964280-MLA46869170141_072021-F.webp">
-    <a href="/productos/1">
-        <p class="productName">Play station 4 + juego</p>
-        <p class="productPrice">$113.999</p>
-        <p class="productDiscount">%Descuento</p>
+<article class="product bg-info text-white text-center">
+    <a href="/productos/<%= producto.id %>">
+        <img src="/img/productosImagenes/<%= producto.imagen %>">
+        <p class="productName"><%= producto.nombre %></p>
+        <p class="productPrice"><%= producto.moneda + ' $' +producto.precio %></p>
+        <% if(producto.descuento) { %>
+            <p class="productDiscount">Desc<%= producto.descuento %></p>
+        <% } %>
     </a>
 </article>

@@ -13,7 +13,7 @@ var storage = multer.diskStorage({
 var upload = multer({storage});
 var adminController = require('../controllers/adminController');
 
-router.get('/',adminController.adminRender.login);
+router.get('/',adminController.adminRender.home);
 router.get('/login',adminController.adminRender.login);
 router.get('/producto/edit/:id',adminController.adminRender.edit);
 router.get('/producto/new',adminController.adminRender.add);

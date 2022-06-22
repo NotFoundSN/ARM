@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <%- include('../partials/head')%>
-
     <body>
         <%- include('../partials/header') %>
             <section>
@@ -13,7 +12,6 @@
                     </ul>
                 </div>
                 <div class="ml-5 products text-left">
-                    <% console.log(locals.mensajesDeError) %>
                         <% if (locals.mensajesDeError) { %>
                             <div>
                                 mostrar errores
@@ -51,5 +49,4 @@
             </section>
             <%- include('../partials/footer') %>
     </body>
-
 </html>

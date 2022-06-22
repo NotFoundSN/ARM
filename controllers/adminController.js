@@ -17,10 +17,8 @@ let AdminRender = {
     },
 
     edit: function(req,res){
-        console.log('llego a edit');
         db.Producto.findByPk(req.params.id)
         .then((producto)=>{
-            console.log(producto);
             res.render('admin/editProduct.ejs',{producto, req});
         });
     },
@@ -73,9 +71,7 @@ let AdminFunctions = {
     },
 
     update: (req,res) => {
-        db.Producto.findByPk(req.params.id,{include: ['categorias','compras']}).then((producto)=>{
-            return res.render('admin/editProduct.ejs',{producto});
-        });
+        //
     },
 
     delete: (req,res) => {

@@ -4,24 +4,11 @@
     <body>
         <%- include('../partials/header') %>
         <section class="row">
-            <%- include('../partials/categories', {categorias: categorias}) %>
+            <%- include('../partials/categories',{categorias:categorias}) %>
             <% productos.forEach(producto => { %>
             <%- include('../partials/productArticle', {producto: producto}) %>
-            <!--
-            <article class="product bg-info text-white text-center">
-                <a href="/productos/<%= producto.id %>">
-                    <img src="/img/productosImagenes/<%= producto.imagen %>">
-                    <p class="productName"><%= producto.nombre %></p>
-                    <p class="productPrice"><%= producto.moneda + ' $' +producto.precio %></p>
-                    <% if(producto.descuento) { %>
-                        <p class="productDiscount">Desc<%= producto.descuento %></p>
-                    <% } %>
-                </a>
-            </article>
-            -->
             <% }) %>
         </section>
         <%- include('../partials/footer') %>
 </body>
-
 </html>

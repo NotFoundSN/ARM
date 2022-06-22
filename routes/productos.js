@@ -4,6 +4,6 @@ var productosController = require('../controllers/productosController');
 
 router.get('/',productosController.list);
 router.get('/:id',productosController.get);
-router.get('/search/:categories',productosController.search);
+router.get('/search/:id',productosController.search);
 
 module.exports = router;

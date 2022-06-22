@@ -7,14 +7,12 @@
     </div>
     <div class="d-inline float-right text-left p-3">
         <% if(req.session.user){ %>
-            <a href="#">
-                <button class="rounded btn btn-sm btn-info">
-                    <i class="fas fa-sign-in-alt"></i> <%= req.session.user.nombre %> 
-                </button>
-            </a>
+            <h4 class="pr-3 d-inline">
+                <i class="fas fa-user"></i> ¡Bienvenido <%= req.session.user.nombre %>!
+            </h4> 
             <a href="/usuario/close">
                 <button class="rounded btn btn-sm btn-warning">
-                    <i class="fas fa-arrow-alt-circle-right"></i> LogOut
+                    <i class="fas fa-arrow-alt-circle-right"></i> Cerrar sesion
                 </button>
             </a>
         <% } else { %> 

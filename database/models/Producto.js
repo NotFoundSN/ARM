@@ -33,11 +33,10 @@ module.exports = (sequelize, dataTypes) => {
     const Producto = sequelize.define(alias, cols, config);
 
     Producto.associate = function(models) {
-        // Declaracion de relaciones
         Producto.belongsToMany(models.Categoria, {
             as : 'categorias',
             through : 'categoria_producto',
-            foreignKey : 'id',
+            foreignKey : 'id_producto',
             otherKey : 'id_categoria',
             timestamps : false,
         });

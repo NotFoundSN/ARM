@@ -6,14 +6,24 @@ module.exports = {
         db.Producto.findAll()
         .then(productos => {
             console.log(productos);
-            res.render('index.ejs', {productos})
+            db.Categoria.findAll()
+            .then(categorias => {
+                console.log(categorias);
+                res.render('index.ejs', {productos, categorias})
+            })
+            
         })
     },
     get: (req,res) => {
         db.Producto.findByPk(req.params.id)
         .then(producto => {
             console.log(req.params.id);
-            res.render('productoDetalles.ejs', {producto});
+            db.Categoria.findAll()
+            .then(categorias => {
+                console.log(categorias);
+                res.render('productoDetalles.ejs', {producto, categorias});
+            })
+            
         });
     },
     search: (req,res) => {
@@ -25,7 +35,11 @@ module.exports = {
             }
         })
         .then(productos => {
-            res.render('index.ejs', {productos})
+            db.Categoria.findAll()
+            .then(categorias => {
+                console.log(categorias);
+                res.render('index.ejs', {productos, categorias})
+            })
         })
     },
 }

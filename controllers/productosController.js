@@ -28,11 +28,17 @@ module.exports = {
     },
     search: (req,res) => {
         db.Producto.findAll({
-            where: {
-                rating : {
-                    [db.Sequelize.Op.gte] : 2,
+            /*where: {
+                
+            },*/
+            include:[{
+                model: CategoriaProducto,
+                where: {
+                    id_categoria: req.params.id
                 }
-            }
+            }]
+        /*JOIN categoria_producto on products.id=categoria_producto.id_producto
+WHERE categoria_producto.id_categoria=1*/
         })
         .then(productos => {
             db.Categoria.findAll()

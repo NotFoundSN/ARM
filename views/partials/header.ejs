@@ -6,6 +6,18 @@
         <img src="/img/logo.png" class="p-3" width="200px" heigth="100px">
     </div>
     <div class="d-inline float-right text-left p-3">
+        <% if(req.session.user){ %>
+            <a href="#">
+                <button class="rounded btn btn-sm btn-info">
+                    <i class="fas fa-sign-in-alt"></i> <%= req.session.user.nombre %> 
+                </button>
+            </a>
+            <a href="/usuario/close">
+                <button class="rounded btn btn-sm btn-warning">
+                    <i class="fas fa-arrow-alt-circle-right"></i> LogOut
+                </button>
+            </a>
+        <% } else { %> 
         <a href="/usuario/login">
             <button class="rounded btn btn-sm btn-info">
                 <i class="fas fa-sign-in-alt"></i> Ingresar
@@ -16,5 +28,6 @@
                 <i class="fas fa-arrow-alt-circle-right"></i> Registrar
             </button>
         </a>
+        <% } %>
     </div>
 </header>

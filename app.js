@@ -13,7 +13,6 @@ var carritoRouter = require('./routes/carrito');
 var usuarioRouter = require('./routes/usuario');
 var productoRouter = require('./routes/productos');
 var apiRouter = require('./routes/api');
-
 var app = express();
 
 // view engine setup
@@ -26,7 +25,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
-app.use(session({secret:"MoCGrupo2"}));
+app.use(session({secret:"MoCGrupo2", user:{}}));
+
 
 //Rutas
 app.use('/', indexRouter);

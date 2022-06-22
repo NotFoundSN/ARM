@@ -13,7 +13,7 @@
                     </p>
                 </div>
             </div>
-            <form class="col-10 col-md-7" action="/admin/producto/add" enctype="multipart/form-data" method="POST">
+            <form class="col-10 col-md-7" action="/admin/producto/update?_method=PUT" enctype="multipart/form-data" method="POST">
                 <label for="name">Nombre:</label>
                 <input class="form-control mb-2" id="name" type="text" name="nombre" value="<%= producto.nombre%>" required>
                 <label for="price">Precio:</label>

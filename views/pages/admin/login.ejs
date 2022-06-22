@@ -8,12 +8,12 @@
                 <div class='register'>
                     <h3 class="p-3">Iniciar sesión (Admins)</h3>
                     <p class="pl-4 pb-4 pr-4 pt-0">Ingrese sus datos de acceso para continuar</p>
-                    <form action="" class="register w-100">
+                    <form action="/admin/login" method="POST" class="register w-100">
                         <label for="name"><i class="fas fa-user"></i> Nombre de usuario</label>
                         <input class="form-control d-block" id="name" type="text" name="name" required>
                         <label for="pass"><i class="fas fa-lock"></i> Contraseña</label>
                         <input class="form-control d-block" id="pass" type="password" name="pass" required>
-                        <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="button">Ingresar</button>
+                        <button name="register" class="btn btn-sm btn-primary mt-3 w-100" type="submit">Ingresar</button>
                     </form>
                 </div>
             </div>

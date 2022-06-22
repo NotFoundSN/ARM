@@ -2,6 +2,7 @@ const db = require('../database/models');
 const { validationResult, body } = require("express-validator");
 const sequelize = db.sequelize;
 const bcryptjs = require('bcryptjs');
+const session = require("express-session");
 
 module.exports = {
     // Iniciar sesion
@@ -9,7 +10,7 @@ module.exports = {
         db.Categoria.findAll()
             .then(categorias => {
                 console.log(categorias);
-                res.render('login.ejs', { categorias });
+                res.render('login.ejs', { categorias, req });
             })
     },
     login: (req, res) => {
@@ -19,28 +20,32 @@ module.exports = {
             db.Categoria.findAll()
                 .then(categorias => {
                     console.log(categorias);
-                    res.render('login.ejs', { mensajesDeError: errors.mapped(), categorias });
+                    res.render('login.ejs', { mensajesDeError: errors.mapped(), categorias, req});
                 })
         }
 
-        db.Usuario.findAll().then((usuario) => {
-            let userData = users.find((user) => user.username == req.body.name);
+        db.Usuario.findAll()
+        .then((usuario) => {
+            let userData = usuario.find((user) => user.username == req.body.name);
+            console.log(userData);
             if (userData) {
-                let passValid = bcryptjs.compareSync(req.body.password, userToLogin.password)
+                let passValid = bcryptjs.compareSync(req.body.pass, userData.password)
                 if (passValid) {
                     req.session.user = userData;
-                    res.render('index.ejs');
+                    req.session.admin = false;
+                    res.redirect('/');
                 }
             }
         })
     },
     // Cerrar sesion
     signOff: (req, res) => {
-        res.render('index.ejs');
+        req.session.destroy();
+        res.redirect('/');
     },
     // Registrarse
     signUpForm: (req, res) => {
-        res.render('register.ejs');
+        res.render('register.ejs', {req});
     },
     signUp: (req, res) => {
         let errores = validationResult(req);
@@ -49,7 +54,7 @@ module.exports = {
             db.Categoria.findAll()
                 .then(categorias => {
                     console.log(categorias);
-                    res.render('register.ejs.ejs', { mensajesDeError: errores.mapped(), categorias });
+                    res.render('register.ejs.ejs', { mensajesDeError: errores.mapped(), categorias, req });
                 })
             //mostrar errores
         }
@@ -65,14 +70,14 @@ module.exports = {
                     email: req.body.mail
                 });
                 //redirecciono a login
-                res.redirect('/usuario/login');
+                res.redirect('/usuario/login', {req});
             }
             else {
                 db.Categoria.findAll()
                     .then(categorias => {
                         console.log(categorias);
                         errores = [{ msg: 'Ambas contrasenias deben coincidir' }];
-                        res.render('register.ejs.ejs', { mensajesDeError: errores.mapped(), categorias });
+                        res.render('register.ejs.ejs', { mensajesDeError: errores.mapped(), categorias, req});
                     })
                 //mostrar errores de password no coinciden
             }

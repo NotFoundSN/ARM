@@ -9,7 +9,7 @@ module.exports = {
             db.Categoria.findAll()
             .then(categorias => {
                 console.log(categorias);
-                res.render('index.ejs', {productos, categorias})
+                res.render('index.ejs', {productos, categorias, req})
             })
             
         })
@@ -21,7 +21,7 @@ module.exports = {
             db.Categoria.findAll()
             .then(categorias => {
                 console.log(categorias);
-                res.render('productoDetalles.ejs', {producto, categorias});
+                res.render('productoDetalles.ejs', {producto, categorias, req});
             })
             
         });
@@ -38,7 +38,7 @@ module.exports = {
             db.Categoria.findAll()
             .then(categorias => {
                 console.log(categorias);
-                res.render('index.ejs', {productos, categorias})
+                res.render('index.ejs', {productos, categorias, req})
             })
         })
     },

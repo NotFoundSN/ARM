@@ -13,14 +13,17 @@ let AdminRender = {
     },
 
     add: (req,res) => {
-        res.render('admin/addProduct', {req});
+        let categorias = db.Categoria.findAll().then((categorias)=>{
+            return categorias;
+        });
+        Promise.all([categorias]).then(([categorias])=>{
+            res.render('admin/addProduct', {req,categorias});
+        });
     },
 
     edit: function(req,res){
-        console.log('llego a edit');
         db.Producto.findByPk(req.params.id)
         .then((producto)=>{
-            console.log(producto);
             res.render('admin/editProduct.ejs',{producto, req});
         });
     },
@@ -40,7 +43,7 @@ let AdminFunctions = {
                     req.session.user = user;
                     req.session.admin = true;
                     console.log(req.session);
-                    res.redirect('/admin', {req});
+                    res.redirect('/admin');
                 }
                 else
                 {
@@ -58,17 +61,27 @@ let AdminFunctions = {
             return res.render('admin/addProduct', {req});
         }
 
-        db.Producto.create({
+        let producto = db.Producto.create({
             nombre : req.body.nombre,
             precio : req.body.precio,
             descuento : req.body.descuento,
             descripcion : req.body.descripcion,
             imagen : req.file.filename,
             moneda : req.body.moneda,
-        }).then((product)=>{
-            res.redirect('/productos/' + product.id);
         }).catch((error)=>{
             res.send(error);
+        });
+        console.log(req.body.categoria);
+
+        Promise.all([producto]).then(([producto])=>{
+            let categoria = db.CategoriaProducto.create({
+                id_producto: producto.id,
+                id_categoria: req.body.categoria
+            }).catch((error)=>{
+                res.send(error);
+            }).then(()=>{
+                res.redirect('/productos/' + producto.id);
+            });
         });
     },
 

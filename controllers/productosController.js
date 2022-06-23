@@ -30,8 +30,9 @@ module.exports = {
     },
     search: (req,res) => {
         let productos = db.Producto.findAll({
-            include:['categorias']
+            include:['categorias'],
         }).then(productos => {
+            console.log(productos);
             return productos.filter((product)=>{
                 return product.categorias.filter((categoria)=>{
                     return categoria.id == req.params.id;
@@ -42,7 +43,6 @@ module.exports = {
         let categorias = db.Categoria.findAll().then(categorias => {
             return categorias;
         });
-
 
         Promise.all([productos,categorias]).then(([productos,categorias])=>{
             res.render('index.ejs', {productos, categorias, req});

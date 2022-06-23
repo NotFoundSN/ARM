@@ -24,6 +24,8 @@ module.exports = (sequelize, dataTypes) => {
             timestamps : false,
         });
     }
+    CategoriaProducto.removeAttribute('id');
+
 
     return CategoriaProducto
 };

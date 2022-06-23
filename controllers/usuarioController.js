@@ -36,7 +36,7 @@ module.exports = {
                     res.redirect('/');
                 }
             }
-        })
+        });
     },
     // Cerrar sesion
     signOff: (req, res) => {

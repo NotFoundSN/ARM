@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require("method-override");
 const session = require("express-session");
+let cors = require('cors');
 
 /* //Rutas// */
 var indexRouter = require('./routes/index');
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
 app.use(session({secret:"MoCGrupo2", user:{}}));
 
+app.use(cors());
 
 //Rutas
 app.use('/', indexRouter);

@@ -22,14 +22,30 @@ module.exports = {
                 res.json(respuesta(200, producto));
             });
     },
+    productosVendidos: (req, res) => {          //Devuelve cantidad de productos vendido de cada producto <--
+        db.Producto.findByPk(req.params.id)
+            .then(producto => {
+                console.log(req.params.id);
+                res.json(respuesta(200, producto));
+            });
+    },
     categorias: (req, res) => {                 //Devuelve lista de categorias
         db.Categoria.findAll()
             .then(categorias => {
                 res.json(respuesta(200, categorias));
             })
     },
+    productosEnCategoria: (req, res) => {         //Devuelve cantidad de productos en cada categoria  <==
+        db.CategoriaProducto.findAll()
+            .then(datos => {
+                res.json(respuesta(200, datos));
+            })
+    },
     productosCategoria: (req, res) => {         //Devuelve todos los productos de X categoria
-        
+        db.CategoriaProducto.findAll()
+            .then(datos => {
+                res.json(respuesta(200, datos));
+            })
     },
     usuarios: (req, res) => {         //Devuelve cantidad de usuarios en la tabla
         db.Usuario.count()

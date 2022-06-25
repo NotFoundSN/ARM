@@ -9,9 +9,7 @@ function SideBar() {
                     <a href="/" className="list-group-item list-group-item-primary"><i className="fas fa-hand-point-right"></i>Datos</a>
                     <a href="/" className="list-group-item list-group-item-primary"><i className="fas fa-hand-point-right"></i>Productos</a>
                     <a href="/" className="list-group-item list-group-item-primary"><i className="fas fa-hand-point-right"></i>Categorias</a>
-                    <a href="/" className="list-group-item list-group-item-primary"><i className="fas fa-hand-point-right"></i></a>
-                    <a href="/" className="list-group-item list-group-item-primary"><i className="fas fa-hand-point-right"></i></a>
-                    <a href="/" className="list-group-item list-group-item-primary"><i className="fas fa-hand-point-right"></i></a>
+                    <a href="/" className="list-group-item list-group-item-primary"><i className="fas fa-hand-point-right"></i>Ventas</a>
                 </ul>
             </div>
         </React.Fragment>

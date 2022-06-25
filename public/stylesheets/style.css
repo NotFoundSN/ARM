@@ -24,10 +24,7 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-<<<<<<< HEAD
-=======
   color: var(--azul);
->>>>>>> cambiosJulio
   font-size: 0.8rem;
 }
 

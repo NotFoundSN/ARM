@@ -68,19 +68,21 @@ let AdminFunctions = {
             descripcion : req.body.descripcion,
             imagen : req.file.filename,
             moneda : req.body.moneda,
-        }).catch((error)=>{
+        })
+        .catch((error)=>{
             res.send(error);
         });
         console.log(req.body.categoria);
 
-        Promise.all([producto]).then(([producto])=>{
+        Promise.all([producto]).then(([produc])=>{
+            console.log(produc)
             let categoria = db.CategoriaProducto.create({
-                id_producto: producto.id,
+                id_producto: produc.id,
                 id_categoria: req.body.categoria
             }).catch((error)=>{
                 res.send(error);
             }).then(()=>{
-                res.redirect('/productos/' + producto.id);
+                res.redirect('/productos/' + produc.id);
             });
         });
     },

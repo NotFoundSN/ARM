@@ -3,11 +3,11 @@ module.exports = (sequelize, dataTypes) => {
     let cols = {
         id_producto : {
             type: dataTypes.BIGINT(10),
-            foreignKey: true,
+            primaryKey: true,
         },
         id_categoria : {
             type: dataTypes.BIGINT(10),
-            foreignKey: true,
+            primaryKey: true,
         },
     };
     let config = {
@@ -16,18 +16,6 @@ module.exports = (sequelize, dataTypes) => {
     }
 
     const CategoriaProducto = sequelize.define(alias, cols, config);
-
-    console.log(CategoriaProducto);
-
-    CategoriaProducto.associate = function(models) {
-        CategoriaProducto.belongsToMany(models.Producto, {
-            as : 'productos',
-            through : 'categoria_producto',
-            foreignKey : 'id_categoria',
-            otherKey : 'id_producto',
-            timestamps : false,
-        });
-    }
     
     return CategoriaProducto
 };

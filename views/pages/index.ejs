@@ -3,8 +3,8 @@
     <%- include('../partials/head')%>
     <body>
         <%- include('../partials/header') %>
+        <%- include('../partials/categories',{categorias:categorias}) %>
         <section class="row">
-            <%- include('../partials/categories',{categorias:categorias}) %>
             <% productos.forEach(producto => { %>
             <%- include('../partials/productArticle', {producto: producto}) %>
             <% }) %>

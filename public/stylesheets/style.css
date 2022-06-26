@@ -16,6 +16,8 @@
 }
 
 body {
+  width: 100vw;
+  height: 100vh;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -161,7 +163,7 @@ section {
 /*====== Footer ======*/
 
 footer {
-  position: sticky;
+  position: fixed;
   bottom: 0;
   display: block;
   flex-direction: row;

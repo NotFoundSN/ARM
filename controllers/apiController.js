@@ -63,6 +63,12 @@ module.exports = {
         })
             .then(consulta => {
                 let resultado = consulta.map(registro => {
+                    console.log(registro.id);
+                    console.log(registro);
+                    console.log('------------------');
+                    console.log(registro.productoscat);
+                    console.log('------------------');
+                    console.log('------------------');
                     let objeto = {
                         id : registro.id,
                         nombre : registro.nombre,

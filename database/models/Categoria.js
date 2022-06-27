@@ -21,8 +21,8 @@ module.exports = (sequelize, dataTypes) => {
         Categoria.belongsToMany(models.Producto, {
             as : 'productoscat',
             through : 'categoria_producto',
-            foreignKey : 'id_producto',
-            otherKey : 'id_categoria',
+            foreignKey : 'id_categoria',
+            otherKey : 'id_producto',
             timestamps : false,
         });
     }

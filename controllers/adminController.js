@@ -72,10 +72,8 @@ let AdminFunctions = {
         .catch((error)=>{
             res.send(error);
         });
-        console.log(req.body.categoria);
 
         Promise.all([producto]).then(([produc])=>{
-            console.log(produc)
             let categoria = db.CategoriaProducto.create({
                 id_producto: produc.id,
                 id_categoria: req.body.categoria

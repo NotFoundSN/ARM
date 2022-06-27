@@ -1,0 +1,20 @@
+.productDetail {
+    display: flex;
+    background-color: #E6E6FA;
+    width: 80vw;
+    margin-left: 10vw;
+    flex-direction: row;
+}
+.imagenProd {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+}
+.productStats {
+    display: flex;
+    flex-direction: column;
+}
+.productName{
+
+}

@@ -11,7 +11,7 @@ module.exports = function(app) {
   app.use(
     '/img/productosImagenes',
     createProxyMiddleware({
-      target: 'http://localhost:3000/img/productosImagenes/',
+      target: 'http://localhost:3000',
       changeOrigin: true,
     })
   );

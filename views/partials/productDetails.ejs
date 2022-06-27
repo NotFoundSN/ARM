@@ -1,13 +1,21 @@
 <article class="productDetail">
     <div class="justify-content-center">
-        <img src="/img/productosImagenes/<%= producto.imagen %>">
-        <ul class="productStats">
-            <li class="productName"><%= producto.nombre %></li>
-            <li class="productDescription">
-                <%= producto.descripcion %>
-            </li>
-            <li class="productPrice"><%= producto.precio %></li>
-            <li class="productDiscount"><%= producto.descuento %></li>
-        </ul>
+        <div class='productHead'>
+            <div>
+                <img class='imagenProd' src="/img/productosImagenes/<%= producto.imagen %>" alt='imagen del producto' />
+            </div>
+            <ul class="productStats">
+                <li class="productName">
+                    <%= producto.nombre %>
+                </li>
+                <li class="productPrice">$<%= producto.precio %>
+                </li>
+                <li class="productDiscount">descuento del <%= producto.descuento %>%</li>
+            </ul>
+        </div>
+        <p class="productDescription">
+            <%= producto.descripcion %>
+        </p>
+    </div>
     </div>
 </article>

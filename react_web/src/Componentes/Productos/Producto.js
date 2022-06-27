@@ -23,17 +23,19 @@ class Producto extends Component {
         return (
             <React.Fragment>
                 <article className="productDetail">
-                    <div>
-                        <img className='imagenProd' src={`/img/productosImagenes/${this.state.producto.imagen}`} alt='imagen del producto' />
+                    <div className='productHead'>
+                        <div>
+                            <img className='imagenProd' src={`/img/productosImagenes/${this.state.producto.imagen}`} alt='imagen del producto' />
+                        </div>
+                        <ul className="productStats">
+                            <li className="productName">{this.state.producto.nombre}</li>
+                            <li className="productPrice">{this.state.producto.precio} {this.state.producto.moneda}</li>
+                            <li className="productDiscount">descuento del {this.state.producto.descuento}%</li>
+                        </ul>
                     </div>
-                    <ul className="productStats">
-                        <li className="productName">{this.state.producto.nombre}</li>
-                        <li className="productPrice">{this.state.producto.precio} {this.state.producto.moneda}</li>
-                        <li className="productDiscount">descuento del {this.state.producto.descuento}%</li>
-                    </ul>
                     <p className="productDescription">{this.state.producto.descripcion}</p>
                 </article>
-                
+
             </React.Fragment>
         );
     }

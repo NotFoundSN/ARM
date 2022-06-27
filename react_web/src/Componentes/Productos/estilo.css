@@ -1,17 +1,25 @@
 .productDetail {
     display: flex;
     background-color: #E6E6FA;
-    width: 80vw;
-    margin-left: 10vw;
-    flex-direction: row;
+    width: 60vw;
+    margin-left: 20%;
+    flex-direction: column;
     align-content: center;
+    min-width: 600px;
 }
+
+.productHead {
+    display: flex;
+    flex-direction: row;
+}
+
 .imagenProd {
     display: flex;
     width: 100%;
     max-width: 400px;
     max-height: 400px;
 }
+
 .productStats {
     width: 50%;
     display: flex;
@@ -26,9 +34,25 @@
     display: flex;
     font-size: 4em;
 }
+.productPrice {
+    display: flex;
+    position:relative;
+    top: 2.5em;
+    font-size: 2em;
+}
+.productDiscount {
+    display: flex;
+    position:relative;
+    top: 0.5em;
+    font-size: 2em;
+}
+
 .productDescription {
     display: flex;
-    align-self: flex-end;
-    justify-self: flex-start;
-
+    text-align: left;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-right: 1em;
+    font-size: 1.3em;
+    background-color: #E6E6FA;
 }

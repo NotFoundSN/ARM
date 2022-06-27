@@ -6,7 +6,7 @@
         <%- include('../../partials/adminNavBar') %>
         <div class="row justify-content-center mb-4">
             <div class="col-10 col-md-7">
-                <h3 class="d-block">Editar un producto</h3>
+                <h3 class="d-block">Editando producto <%= producto.nombre%></h3>
                 <div class="alert alert-light mb-0">
                     <p class="mb-0">
                         <slot name="subTitle">En este apartado podra modificar un producto ya cargado. Modifique los campos con los datos necesarios para poder guardarlo</slot>
@@ -21,9 +21,9 @@
                 <label for="discount">Descuento:</label>
                 <input class="form-control mb-2" id="discount" type="number"  value="<%= producto.descuento%>" placeholder="Sin descuento" name="descuento" required>
                 <label for="description">Descripcion:</label>
-                <input class="form-control mb-2" id="description" type="text"  value="<%= producto.descripcion%>" placeholder="Sin descripcion" name="descripcion" required>
+                <input class="form-control mb-2" id="description" type="text"  value="<%= producto.descripcion%>" placeholder="Sin descripcion" name="descripcion" required >
                 <label for="image">Imagen:</label>
-                <input class="form-control mb-2" id="image" type="file" name="image" required>
+                <input class="form-control mb-2" id="image" type="file" name="image" value="<%= producto.imagen%>" required>
                 <label for="image">Moneda:</label>
                 <select class="custom-select" name="moneda">
                     <option value="ARS">Pesos Argentinos (AR$)</option>

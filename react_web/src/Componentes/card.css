@@ -10,6 +10,10 @@
     justify-content: space-around;
 }
 
+.Active {
+    background-color: #1E90FF !important
+}
+
 .card {
     position: relative;
     display: flex;

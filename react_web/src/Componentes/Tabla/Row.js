@@ -11,7 +11,7 @@ function Row(props) {
             <div className='fila'>
                 <div className='imagen celda'><img className='imagen' src={`/img/productosImagenes/${props.elemento.imagen}`} alt='producto'/></div>
                 <div className='nombre celda'>{props.elemento.nombre}</div>
-                <div className='celda'>{props.elemento.precio}</div>
+                <div className='celda'>${props.elemento.precio}</div>
                 <div className='celda'>{props.elemento.moneda}</div>
                 <div className='celda'>{props.elemento.descuento}</div>
             </div>

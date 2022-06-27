@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 /*import {
     Link
@@ -9,8 +8,22 @@ import '../card.css'
 function Categorias(props) {
     return (
         <React.Fragment>
-            <NavLink to={`/categorias/${props.id}`} className={({isActive}) => isActive ? 'Active' : ''}>
-                <div className="card bg-dark text-white shadow">
+            <NavLink to={`/categorias/${props.id}`} className={({ isActive }) => {
+                if (document.getElementById(`carta${props.id}`)) {
+                    if (isActive) {
+                        document.getElementById(`carta${props.id}`).classList.add('Active');
+                        document.getElementById(`carta${props.id}`).classList.remove('bg-dark');
+                    }
+                    else {
+
+                        document.getElementById(`carta${props.id}`).classList.remove('Active');
+                        document.getElementById(`carta${props.id}`).classList.add('bg-dark');
+
+                    }
+                }
+            }
+            }>
+                <div className={`card bg-dark text-white shadow `} id={`carta${props.id}`}>
                     <div className="tarjeta">
                         <div>{props.nombre}</div>
                         <div>Productos: {props.cant}</div>

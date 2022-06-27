@@ -8,25 +8,22 @@ section {
     display: flex;
     justify-content: space-around;
     min-width: 280px;
-    /*display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-gap: 2em;
-    -ms-grid-row-align: center;*/
 }
 
 .info-box {
-        background: white;
-        height: 160px;
-        max-width: 280px;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        padding: 0 3em;
-        border: 1px solid black;
-        border-radius: 5px;
+    background: white;
+    height: 160px;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 3em;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .box-content {
+    text-decoration: none;
     padding-left: 1.25em;
     white-space: nowrap;
 }
@@ -36,4 +33,10 @@ section {
     font-size: 2em;
     line-height: 150%;
     color: black;
-    }
+    text-align: center;
+}
+
+.box-icon {
+    font-size: 3em;
+    color: #C0C0C0;
+}

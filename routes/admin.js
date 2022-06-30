@@ -14,16 +14,21 @@ const upload = multer({storage});
 const adminController = require('../controllers/adminController');
 const adminAuthMiddleware = require('../middleware/adminAuthMiddleware');
 
-router.get('/',adminAuthMiddleware,adminController.adminRender.home);
-router.get('/login',adminController.adminRender.login);
-router.get('/producto/edit/:id',adminAuthMiddleware,adminController.adminRender.edit);
-router.get('/producto/new',adminAuthMiddleware,adminController.adminRender.add);
-router.get('/producto/delete/:id',adminAuthMiddleware,adminController.adminRender.login);
-router.get('/producto/list',adminAuthMiddleware,adminController.adminRender.list);
+router.get('/',adminAuthMiddleware,adminController.Render.home);
+router.get('/login',adminController.Render.login);
+router.get('/producto/edit/:id',adminAuthMiddleware,adminController.Render.edit);
+router.get('/producto/new',adminAuthMiddleware,adminController.Render.add);
+router.get('/producto/delete/:id',adminAuthMiddleware,adminController.Render.login);
+router.get('/producto/list',adminAuthMiddleware,adminController.Render.list);
 
-router.post('/login',adminController.adminFunctions.login);
-router.post('/producto/add',adminAuthMiddleware,upload.single('image'), adminController.adminFunctions.add);
-router.put('/producto/update',adminAuthMiddleware,upload.single('image'), adminController.adminFunctions.update);
-router.delete('/producto/update',adminAuthMiddleware,upload.single('image'), adminController.adminFunctions.delete);
+//por si se buguea, y queda en estos links de funciones
+router.get('/producto/add',adminAuthMiddleware,adminController.Render.home);
+router.get('/producto/update',adminAuthMiddleware,adminController.Render.home);
+router.get('/producto/update',adminAuthMiddleware,adminController.Render.home);
+
+router.post('/login',adminController.Functions.login);
+router.post('/producto/add',adminAuthMiddleware,upload.single('image'), adminController.Functions.add);
+router.put('/producto/update',adminAuthMiddleware,upload.single('image'), adminController.Functions.update);
+router.delete('/producto/update',adminAuthMiddleware,upload.single('image'), adminController.Functions.delete);
 
 module.exports = router;

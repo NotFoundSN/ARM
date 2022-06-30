@@ -2,7 +2,7 @@
     <span class="m-3 text-white">Categorias</span>
     <ul class="list-group list-group-flush">
         <% categorias.forEach(cat => { %>
-        <a href="/productos/search/<%= cat.id %>" class="list-group-item list-group-item-primary"><li><i class="far fa-dot-circle"></i> <%= cat.nombre %></li></a>
+        <a href="/productos/filter/<%= cat.id %>" class="list-group-item list-group-item-primary"><li><i class="far fa-dot-circle"></i> <%= cat.nombre %></li></a>
         <% }) %>
     </ul>
 </div>

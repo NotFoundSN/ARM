@@ -1,52 +1,30 @@
-const db = require('../database/models');
-const sequelize = db.sequelize;
+const sql = require('./dbController');
 
 module.exports = {
     list: (req,res) => {
-        let productos = db.Producto.findAll()
-        .then(productos => {
-            return productos;
-        })
-        let categorias = db.Categoria.findAll().then(categorias => {
-            return categorias;
-        })
+        let productos = sql.productos.findProducts();
+        let categorias = sql.categorias.findCategorias();
 
-        Promise.all([productos, categorias]).then(([productos, categorias])=>{
+        Promise.all([productos, categorias])
+        .then(([productos, categorias])=>{
             res.render('index.ejs', {productos, categorias, req})    
         })
     },
     get: (req,res) => {
-        let producto = db.Producto.findByPk(req.params.id)
-        .then(producto => {
-            return producto;
-        });
-        let categorias = db.Categoria.findAll().then(categorias => {
-            return categorias;
-        });
+        let producto = sql.productos.findProductById(req.params.id);
+        let categorias = sql.categorias.findCategorias();
 
-        Promise.all([producto, categorias]).then(([producto, categorias])=>{
+        Promise.all([producto, categorias])
+        .then(([producto, categorias])=>{
             res.render('productoDetalles.ejs', {producto, categorias, req});    
         });
     },
-    search: (req,res) => {
-        let productos = db.Producto.findAll({
-            include:[{
-                model: db.Categoria,
-                as: 'categoriasprod',
-                requiered: false,
-                where: {
-                    id:req.params.id
-                }
-            }],
-        }).then(productos => {
-            console.log(productos);
-            return productos;
-        });
-        let categorias = db.Categoria.findAll().then(categorias => {
-            return categorias;
-        });
+    filter: (req,res) => {
+        let productos = sql.productos.findProductsByCategoria(req.params.id);
+        let categorias = sql.categorias.findCategorias();
 
-        Promise.all([productos,categorias]).then(([productos,categorias])=>{
+        Promise.all([productos,categorias])
+        .then(([productos,categorias])=>{
             res.render('index.ejs', {productos, categorias, req});
         });
     },

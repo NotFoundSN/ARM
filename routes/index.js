@@ -6,6 +6,6 @@ const registerUserMiddleware = require('../middleware/registerUserMiddleware');
 
 /* GET home page. */
 router.get('/', productosController.list);
-router.get('/home', productosController.list);
+router.get('/home', (req,res) => {res.redirect('/');} );
 
 module.exports = router;

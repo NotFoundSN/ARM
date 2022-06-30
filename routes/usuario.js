@@ -24,12 +24,12 @@ const loginUserValidator = [
 
 
 //GET
-router.get('/login',usuarioController.signIn);
-router.get('/register',usuarioController.signUpForm);
-router.get('/close',usuarioController.signOff);
+router.get('/login',usuarioController.render.login);
+router.get('/register',usuarioController.render.register);
+router.get('/close',usuarioController.function.signOff);
 
 //POST
-router.post("/register",registerUserValidator,usuarioController.signUp);
-router.post('/login', loginUserValidator,usuarioController.login);
+router.post("/register",registerUserValidator,usuarioController.function.register);
+router.post('/login', loginUserValidator,usuarioController.function.login);
 
 module.exports = router;

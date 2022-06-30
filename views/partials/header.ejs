@@ -6,26 +6,36 @@
         <img src="/img/logo.png" class="p-3" width="200px" heigth="100px">
     </div>
     <div class="d-inline float-right text-left p-3">
+        <a href="/carrito">
+            <button class="rounded btn btn-info cartButton">
+                <i class="fas fa-shopping-cart cartIcon"></i>
+                <% if(req.cookies.cart){ %>
+                    <p class="cartNumber">
+                        <%= req.cookies.cart.length %>
+                    </p>
+                    <% } %>
+            </button>
+        </a>
         <% if(req.session.user){ %>
             <h4 class="pr-3 d-inline">
                 <i class="fas fa-user"></i> ¡Bienvenido <%= req.session.user.nombre %>!
-            </h4> 
+            </h4>
             <a href="/usuario/close">
                 <button class="rounded btn btn-sm btn-warning">
                     <i class="fas fa-arrow-alt-circle-right"></i> Cerrar sesion
                 </button>
             </a>
-        <% } else { %> 
-        <a href="/usuario/login">
-            <button class="rounded btn btn-sm btn-info">
-                <i class="fas fa-sign-in-alt"></i> Ingresar
-            </button>
-        </a>
-        <a href="/usuario/register">
-            <button class="rounded btn btn-sm btn-warning">
-                <i class="fas fa-arrow-alt-circle-right"></i> Registrar
-            </button>
-        </a>
-        <% } %>
+            <% } else { %>
+                <a href="/usuario/login">
+                    <button class="rounded btn btn-sm btn-info">
+                        <i class="fas fa-sign-in-alt"></i> Ingresar
+                    </button>
+                </a>
+                <a href="/usuario/register">
+                    <button class="rounded btn btn-sm btn-warning">
+                        <i class="fas fa-arrow-alt-circle-right"></i> Registrar
+                    </button>
+                </a>
+                <% } %>
     </div>
 </header>

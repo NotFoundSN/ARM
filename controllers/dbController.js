@@ -100,9 +100,6 @@ module.exports = {
                 moneda: prod.moneda,
             })
                 .then((newProd) => {
-                    console.log('------- prod -------');
-                    console.log(newProd);
-                    console.log('--------------------');
                     return newProd.id;
                 })
                 .catch((error) => {

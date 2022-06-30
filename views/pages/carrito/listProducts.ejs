@@ -1,0 +1,30 @@
+<html>
+    <%- include('../../partials/head')%>
+    <body>
+        <%- include('../../partials/header') %>
+        <%- include('../../partials/adminNavBar') %>
+        <div class="row justify-content-center mb-4">
+            <div class="col-10 col-md-7">
+                <h3 class="d-block">Lista de productos</h3>
+                <div class="alert alert-light mb-0">
+                    <p class="mb-0">
+                        <slot name="subTitle">En este apartado podra agregar un nuevo producto a la lista de nuestra tienda, debe rellenar todos los campos con los datos necesarios para poder registrarlo</slot>
+                    </p>
+                </div>
+                <div className='tabla'>
+                    <div class='titulos'>
+                        <div class='celda'>Imagen</div>
+                        <div class='celda'>Nombre</div>
+                        <div class='celda'>Precio</div>
+                        <div class='celda'>Descuento</div>
+                        <div class="celda">Cantidad</div>
+                    </div>
+                    <% productos.forEach(producto => { %>
+                        <%- include('./listProductsRow.ejs', {producto: producto}) %>
+                    <% }) %>
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

@@ -3,7 +3,7 @@
         <a href="/productos/<%= producto.id %>">
             <img src="/img/productosImagenes/<%= producto.imagen %>">
             <p class="productName"><%= producto.nombre %></p>
-            <p class="productPrice"><%= producto.moneda + ' $' +producto.precio %></p>
+            <p class="productPrice"><%= ' $' +producto.precio %></p>
             <% if(producto.descuento) { %>
                 <p class="productDiscount">Desc<%= producto.descuento %></p>
             <% } %>

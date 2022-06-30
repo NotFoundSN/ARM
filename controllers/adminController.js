@@ -70,7 +70,6 @@ module.exports = {
                 descuento: req.body.descuento,
                 descripcion: req.body.descripcion,
                 imagen: req.file.filename,
-                moneda: req.body.moneda,
             });
 
             Promise.all([producto])

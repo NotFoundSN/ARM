@@ -21,8 +21,8 @@ module.exports = (sequelize, dataTypes) => {
         imagen:{
             type: dataTypes.STRING
         },
-        moneda:{
-            type: dataTypes.TEXT('tiny')
+        borrado:{
+            type: dataTypes.DATE
         }
     };
     let config = {

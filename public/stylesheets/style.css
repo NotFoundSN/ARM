@@ -161,7 +161,7 @@ section {
 
 .productHead .productStats .productName {
   display: flex;
-  font-size: 4em;
+  font-size: 3em;
   list-style-type: none;
   list-style-position: outside;
   text-align: center;
@@ -170,8 +170,8 @@ section {
 .productHead .productStats .productDiscount {
   display: flex;
   position: relative;
-  top: 0.5em;
-  font-size: 2em;
+  top: 1em;
+  font-size: 1.7em;
   list-style-type: none;
   list-style-position: outside;
   text-align: center;
@@ -180,11 +180,17 @@ section {
 .productHead .productStats .productPrice {
   display: flex;
   position: relative;
-  top: 2.5em;
+  top: 1em;
   font-size: 2em;
   list-style-type: none;
   list-style-position: outside;
   text-align: center;
+}
+
+.productStats .cartButton {
+  display: flex;
+  position: relative;
+  top: 1.5em
 }
 
 /*====== Registro ======*/
@@ -341,4 +347,27 @@ footer ul {
 
 * {
   box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+.cartIcon {
+  font-size: 2.8em;
+}
+.cartNumber {
+  position: relative;
+  font-size: 1.3em;
+  font-weight: bold;
+  top: -2.5em;
+  right: -1.8em;
+  color:red;
+  background-color: yellow;
+  border-radius: 2em;
+  width: 1.4em;
+  height: 1.4em;
+}
+.cartButton {
+  height: 4em;
 }

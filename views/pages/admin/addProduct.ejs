@@ -21,14 +21,9 @@
                 <label for="discount">Descuento:</label>
                 <input class="form-control mb-2" id="discount" type="number"  placeholder="Sin descuento" name="descuento" required>
                 <label for="description">Descripcion:</label>
-                <input class="form-control mb-2" id="description" type="text"  placeholder="Sin descripcion" name="descripcion" required>
+                <textarea name="descripcion" class="form-control mb-2" id="description" rows="10" cols="50"></textarea>
                 <label for="image">Imagen:</label>
                 <input class="form-control mb-2" id="image" type="file" name="image" required>
-                <label for="image">Moneda:</label>
-                <select class="custom-select" name="moneda">
-                    <option value="ARS">Pesos Argentinos (AR$)</option>
-                    <option value="USD">Dolar Internacional (U$D)</option>
-                </select>
                 <label for="image">Categoria:</label>
                 <select class="custom-select" name="categoria">
                     <% categorias.forEach(cat => { %>

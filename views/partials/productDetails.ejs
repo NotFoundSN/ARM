@@ -11,7 +11,13 @@
                 <li class="productPrice">$<%= producto.precio %>
                 </li>
                 <li class="productDiscount">descuento del <%= producto.descuento %>%</li>
+                <li class="cartButton">
+                    <form action="/carrito/add/<%= producto.id %>" method="POST">
+                        <button type="submit" formaction="/carrito/add/<%= producto.id %>">Agregar al carro</button>
+                    </form>
+                </li>
             </ul>
+            
         </div>
         <p class="productDescription">
             <%= producto.descripcion %>

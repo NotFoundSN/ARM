@@ -1,0 +1,11 @@
+<a href="/admin//producto/edit/<%= producto.id %>">
+    <div class='fila'>
+        <div class='imagen celda'><img class='imagen' src="/img/productosImagenes/<%= producto.imagen %>"
+                alt='producto' />
+        </div>
+        <div class='nombre celda'><%= producto.nombre %></div>
+        <div class='celda'>$<%= producto.precio %></div>
+        <div class='celda'><%= producto.descuento %>%</div>
+        <div class="celda"></div>
+    </div>
+</a>

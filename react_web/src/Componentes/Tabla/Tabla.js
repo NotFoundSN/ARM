@@ -12,7 +12,6 @@ function Tabla(props) {
                     <div className='celda'>Imagen</div>
                     <div className='celda'>Nombre</div>
                     <div className='celda'>Precio</div>
-                    <div className='celda'>Moneda</div>
                     <div className='celda'>Descuento</div>
                 </div>
                 {props.productos.map(producto => { return <Row elemento={producto} key={`producto${producto.id}`} /> })}

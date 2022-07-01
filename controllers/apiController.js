@@ -21,7 +21,7 @@ module.exports = {
         Promise.all([producto])
             .then(([producto]) => {
                 (producto)
-                    ? res.json(respuesta(200, productos))
+                    ? res.json(respuesta(200, producto))
                     : res.json(respuesta(404, 'Producto no existe'))
             })
             .catch((error) => { console.log(error) });

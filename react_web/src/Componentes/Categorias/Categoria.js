@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 /*import {
     Link
@@ -14,11 +14,10 @@ function Categorias(props) {
                         document.getElementById(`carta${props.id}`).classList.add('Active');
                         document.getElementById(`carta${props.id}`).classList.remove('bg-dark');
                     }
-                    else {
-
+                    else 
+                    {
                         document.getElementById(`carta${props.id}`).classList.remove('Active');
                         document.getElementById(`carta${props.id}`).classList.add('bg-dark');
-
                     }
                 }
             }

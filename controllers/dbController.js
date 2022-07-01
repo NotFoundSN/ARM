@@ -57,7 +57,7 @@ module.exports = {
     productos: {
         findProducts: () => {                               //Busca todos los productos
             return db.Producto.findAll()
-                .then( (productos) => {
+                .then((productos) => {
                     return productos;
                 })
                 .catch((error) => {
@@ -74,21 +74,21 @@ module.exports = {
                         id: cat
                     }
                 }],
-            }).then( (productos) => {
+            }).then((productos) => {
                 return productos;
             })
                 .catch((error) => {
                     console.log(error);
                 });
         },
-        findProductById: (idProd) => {                            //Busca un producto con id especifico
-            return db.Producto.findByPk(idProd)
-                .then( (producto) => {
-                    return producto;
-                })
-                .catch((error) => {
-                    console.log(error);
-                })
+        findProductById: async (idProd) => {
+            try {
+                let producto = await db.Producto.findByPk(idProd);
+                return producto;
+            }                          //Busca un producto con id especifico
+            catch (error) {
+                console.log(error);
+            }
         },
         createProduct: (prod) => {                          //Crea un nuevo producto
             return db.Producto.create({
@@ -124,7 +124,7 @@ module.exports = {
     usuarios: {
         countUsers: () => {                              //Cuenta la cantidad de usuarios
             return db.Usuario.count()
-                .then( (user) => {
+                .then((user) => {
                     return user;
                 })
                 .catch((error) => {
@@ -195,9 +195,9 @@ module.exports = {
                 id_producto: idProd,
                 id_categoria: idCat
             })
-            .then((newValue) => {
-                return newValue.id_producto;
-            })
+                .then((newValue) => {
+                    return newValue.id_producto;
+                })
                 .catch((error) => {
                     console.log(error);
                 });

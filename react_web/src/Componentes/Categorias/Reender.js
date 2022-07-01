@@ -9,6 +9,7 @@ class Reender extends Component {
         super();
         this.state = {
             productos: [],
+            antId: 0
         }
     }
 
@@ -16,15 +17,22 @@ class Reender extends Component {
         fetch('/api/categorias/' + this.props.id)
             .then(respuesta => { return respuesta.json() })
             .then(listaProductos => {
-                this.setState({ productos: listaProductos.data })
+                this.setState({
+                    productos: listaProductos.data,
+                    andId: this.props.id
+                })
             })
             .catch(error => console.log(error))
     }
+
     componentDidUpdate() {
         fetch('/api/categorias/' + this.props.id)
             .then(respuesta => { return respuesta.json() })
             .then(listaProductos => {
-                this.setState({ productos: listaProductos.data })
+                this.setState({
+                    productos: listaProductos.data,
+                    andId: this.props.id
+                })
             })
             .catch(error => console.log(error))
     }
@@ -33,7 +41,7 @@ class Reender extends Component {
         let valor;
         return (
             <div>
-                <Tabla productos={this.state.productos} key={`Tabla`}/>
+                <Tabla productos={this.state.productos} key={`Tabla`} />
             </div>
         );
     }

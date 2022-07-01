@@ -29,7 +29,7 @@ class Producto extends Component {
                         </div>
                         <ul className="productStats">
                             <li className="productName">{this.state.producto.nombre}</li>
-                            <li className="productPrice">{this.state.producto.precio} {this.state.producto.moneda}</li>
+                            <li className="productPrice">{this.state.producto.precio}</li>
                             <li className="productDiscount">descuento del {this.state.producto.descuento}%</li>
                         </ul>
                     </div>

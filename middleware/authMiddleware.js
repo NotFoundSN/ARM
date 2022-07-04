@@ -1,6 +1,11 @@
+const session = require("express-session");
+
 module.exports = (req, res, next) => {
-    if(!req.session.userLogged){
-        return res.redirect('/users/login')
+    if(req.session.user){
+        next();
     }
-    next();
+    else
+    {
+        res.redirect('/usuario/login');
+    }
 }

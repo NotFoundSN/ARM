@@ -371,3 +371,79 @@ textarea {
 .cartButton {
   height: 4em;
 }
+
+.buyCart {
+  position: relative;
+  display: flex;
+}
+.borrarCart {
+  position: relative;
+  display: flex;
+  right: -2em;
+  top: 2.5em
+}
+.restarCart
+{
+  position: relative;
+  display: flex;
+  right: 5em;
+  top: -1em;
+}
+.sumarCart
+{
+  position: relative;
+  display: flex;
+  right: 5em;
+  top: -2em
+  
+}
+
+/* Botones del carrito */
+.borrarIcon {
+  color: black;
+  background: transparent;
+  border: none;
+  font-size: 3em;
+}
+.restarIcon
+{
+  color: red;
+  background: transparent;
+  border: none;
+  font-size: 2.2em;
+}
+.sumarIcon
+{
+  color: greenyellow;
+  background: transparent;
+  border: none;
+  font-size: 2.2em;
+}
+.buyIcon {
+  color: black;
+  background: lightblue;
+  border: none;
+  font-size: 2em;
+}
+.borrarIcon:hover 
+{
+  color: black;
+  background: lightblue;
+}
+.buyIcon:hover {
+  color: black;
+  background: lightblue;
+  border: none;
+}
+.restarIcon:hover
+{
+  color: red;
+  background: lightblue;
+  border: none;
+}
+.sumarIcon:hover
+{
+  color: greenyellow;
+  background: lightblue;
+  border: none;
+}

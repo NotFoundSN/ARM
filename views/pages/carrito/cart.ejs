@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<%- include('../../partials/head')%>
+
+    <body>
+        <%- include('../../partials/header') %>
+            <div class="row justify-content-center mb-4">
+                <h1 class="col-10 col-md-7">Carrito</h1>
+                <h3 class="col-10 col-md-7">En este apartado de admin usted podra administrar sus usuarios y compras
+                </h3>
+            </div>
+            <% if(req.cookies.cart && req.cookies.cart.length>0) { %>
+                <div className='tabla'>
+                    <div class='titulos'>
+                        <div class='celda'>Imagen</div>
+                        <div class='celda'>Nombre</div>
+                        <div class='celda'>Precio</div>
+                        <div class='celda'>Descuento</div>
+                        <div class="celda">Cantidad</div>
+                        <div class="celda">Total</div>
+                        <div class="celda"></div>
+                    </div>
+                    <% productos.forEach(producto=> { %>
+                        <%- include('./listProductsRow.ejs', {producto: producto}) %>
+                    <% }) %>
+                    <div class='fila'>
+                        <div class='celda'></div>
+                        <div class='celda'></div>
+                        <div class='celda'></div>
+                        <div class='celda'></div>
+                        <div class="celda">Total:</div>
+                        <div class="celda">
+                            <% var total = productos.reduce((ant, act) => {
+                                return ant + (act.cant * (act.precio-(act.precio*act.descuento)));
+                            }, 0); %>
+                            $<%= total %>
+                        </div>
+                        <div class="celda">
+                            <form action="/carrito/buy" method="POST" class="buyCart">
+                                <button type="submit" class="buyIcon">
+                                    <i class="fas fa-shopping-bag">Comprar</i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <% } else {%>
+                    <div>
+                        <h1>Carrito vacio</h1>
+                    </div>
+                    <% } %>
+                        <%- include('../../partials/footer') %>
+    </body>
+
+</html>

@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes) => {
         descuento:{
         	type: dataTypes.BIGINT(10),
         },
-        moneda:{
+        cantidad:{
         	type: dataTypes.BIGINT(10),
         },        
     };

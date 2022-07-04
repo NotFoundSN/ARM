@@ -90,6 +90,19 @@ module.exports = {
                 console.log(error);
             }
         },
+        findProductsById: async (array) => {
+            try {
+                let producto = await db.Producto.findAll({
+                    where: {
+                        id: array
+                    }
+                });
+                return producto;
+            }                          //Busca un producto con id especifico
+            catch (error) {
+                console.log(error);
+            }
+        },
         createProduct: (prod) => {                          //Crea un nuevo producto
             return db.Producto.create({
                 nombre: prod.nombre,
@@ -201,6 +214,24 @@ module.exports = {
                 .catch((error) => {
                     console.log(error);
                 });
+        }
+    },
+    compras: {
+        create: (compra) => 
+        {
+            return db.Compra.create({
+                id_user:compra.userId,
+                id_producto: compra.producto,
+                precio: compra.precio,
+                descuento: compra.descuento,
+                cantidad: compra.cantidad
+            })
+            .then((newValue) => {
+                return newValue.id_producto;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
         }
     }
 }

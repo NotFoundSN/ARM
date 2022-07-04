@@ -1,10 +1,13 @@
-var express = require('express');
-var router = express.Router();
-var carritoController = require('../controllers/carritoController');
+const express = require('express');
+const router = express.Router();
+const carritoController = require('../controllers/carritoController');
+const authMiddleware = require('../middleware/authMiddleware');
 
 router.get('/',carritoController.show);
 router.post('/add/:id',carritoController.addProduct);
-//router.delete('/delete/:id',carritoController.delete);
-//router.post('/confirm',carritoController.confirm);
+router.post('/delete/:id',carritoController.deleteProduct);
+router.post('/append/:id', carritoController.appendProduct);
+router.post('/reduce/:id', carritoController.subtractProduct);
+router.post('/buy',authMiddleware,carritoController.buy);
 
 module.exports = router;

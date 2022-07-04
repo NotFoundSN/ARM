@@ -9,7 +9,7 @@
         <a href="/carrito">
             <button class="rounded btn btn-info cartButton">
                 <i class="fas fa-shopping-cart cartIcon"></i>
-                <% if(req.cookies.cart){ %>
+                <% if(req.cookies.cart && req.cookies.cart.length>0){ %>
                     <p class="cartNumber">
                         <%= req.cookies.cart.length %>
                     </p>

@@ -1,11 +1,38 @@
-<a href="/admin//producto/edit/<%= producto.id %>">
+<a href="/productos/<%= producto.id %>">
     <div class='fila'>
         <div class='imagen celda'><img class='imagen' src="/img/productosImagenes/<%= producto.imagen %>"
                 alt='producto' />
         </div>
-        <div class='nombre celda'><%= producto.nombre %></div>
-        <div class='celda'>$<%= producto.precio %></div>
-        <div class='celda'><%= producto.descuento %>%</div>
-        <div class="celda"></div>
+        <div class='nombre celda'>
+            <%= producto.nombre %>
+        </div>
+        <div class='celda' id="precio<%= producto.id %>">$<%= producto.precio %>
+        </div>
+        <div class='celda'>
+            <%= producto.descuento %>%
+        </div>
+        <div class='celda' id="cant<%= producto.id %>">
+            <%= producto.cant %>
+        </div>
+        <div class='celda total' id="total<%= producto.id %>">
+            $<%= (producto.cant * (producto.precio-(producto.precio*producto.descuento))) %>
+        </div>
+        <div class="celda">
+            <form action="/carrito/delete/<%= producto.id %>" method="POST" class="borrarCart">
+                <button type="submit" class="borrarIcon">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </form>
+            <form action="/carrito/append/<%= producto.id %>" method="POST" class="sumarCart">
+                <button type="submit" class="sumarIcon">
+                    <i class="fas fa-plus-square"></i>
+                </button>
+            </form>
+            <form action="/carrito/reduce/<%= producto.id %>" method="POST" class="restarCart">
+                <button type="submit" class="restarIcon">
+                    <i class="fas fa-minus-square "></i>
+                </button>
+            </form>
+        </div>
     </div>
 </a>

@@ -6,6 +6,7 @@
         <img src="/img/logo.png" class="p-3" width="200px" heigth="100px">
     </div>
     <div class="d-inline float-right text-left p-3">
+            <a href="/carrito"><h4 class="d-inline text-white mr-3"><i class="fas fa-shopping-cart"></i> Carrito</h4></a>
         <% if(req.session.user){ %>
             <h4 class="pr-3 d-inline">
                 <i class="fas fa-user"></i> ¡Bienvenido <%= req.session.user.nombre %>!

@@ -70,7 +70,7 @@ module.exports = {
                     email: req.body.mail
                 });
                 //redirecciono a login
-                res.redirect('/usuario/login', {req});
+                res.redirect('/usuario/login');
             }
             else {
                 db.Categoria.findAll()

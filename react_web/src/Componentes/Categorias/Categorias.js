@@ -1,20 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import Categoria from './Categoria';
-import '../card.css';
-import {Route, Routes, useParams} from 'react-router-dom';
-import RenderProductosCategoria from '../Categorias/RenderProductosCategoria';
+import './CategoriaStyle.css';
+import {Route, Routes } from 'react-router-dom';
+import Tarjeta from './TarjetaCategoria';
+import ProductosCategoria from './ProductosCategoria';
+
+
 
 function Categorias(props) {
+
     return (
         <React.Fragment>
             <div className="contenedor shadow">
-                <div className='row'>
-                    {props.cat.map(el => { return <Categoria id={el.id} nombre={el.nombre} cant={el.cant} key={`categoria${el.id}`} /> })}
-                </div>
+                {props.cat.map(el => { return <Tarjeta id={el.id} nombre={el.nombre} cant={el.cant} key={`categoria${el.id}`} /> })}
             </div>
             <Routes>
-                <Route path=":id" element={<RenderProductosCategoria key="mostarCategorias"></RenderProductosCategoria>} />
+                <Route path=":id" element={<ProductosCategoria key="mostarCategorias"></ProductosCategoria>} />
             </Routes>
         </React.Fragment>
     );

@@ -6,14 +6,17 @@
     flex-direction: column;
     align-content: center;
     min-width: 600px;
+    margin-top: 2em;
 }
 
 .productHead {
     display: flex;
     flex-direction: row;
+    gap: 1em
 }
 
 .imagenProd {
+    margin: 0.5em;
     display: flex;
     width: 100%;
     max-width: 400px;
@@ -21,7 +24,9 @@
 }
 
 .productStats {
-    width: 50%;
+    margin-top: 0.5em;
+    margin-right: 0.5em;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,23 +35,26 @@
     justify-content: center;
     background-color: #F0F8FF;
 }
+
 .productName{
     display: flex;
-    font-size: 4em;
+    font-size: 3.5em;
 }
+
 .productPrice {
     display: flex;
     position:relative;
-    top: 2.5em;
-    font-size: 2em;
+    top: 1em;
+    font-size: 2.1em;
+    font-weight: bold;
 }
 .productDiscount {
     display: flex;
     position:relative;
-    top: 0.5em;
-    font-size: 2em;
+    top: -1em;
+    font-size: 1.9em;
+    font-style: oblique;
 }
-
 .productDescription {
     display: flex;
     text-align: left;

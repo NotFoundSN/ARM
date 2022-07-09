@@ -1,44 +1,35 @@
-import React, { Component } from 'react';
-import './estilo.css'
 
-class Producto extends Component {
-    constructor() {
-        super();
-        this.state = {
-            producto: {},
-        }
-    }
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import getConsultas from '../../Servicios/getConsultas';
+import './productoStyle.css';
 
-    componentDidMount() {
-        fetch('/api/productos/' + this.props.id)
-            .then(respuesta => { return respuesta.json() })
-            .then(Producto => {
-                console.log(Producto.data);
-                this.setState({ producto: Producto.data })
-            })
-            .catch(error => console.log(error))
-    }
+function Producto(props) {
+    const [producto, modProducto] = useState({});
+    let barra = useParams();
 
-    render() {
-        return (
-            <React.Fragment>
-                <article className="productDetail">
-                    <div className='productHead'>
-                        <div>
-                            <img className='imagenProd' src={`/img/productosImagenes/${this.state.producto.imagen}`} alt='imagen del producto' />
-                        </div>
-                        <ul className="productStats">
-                            <li className="productName">{this.state.producto.nombre}</li>
-                            <li className="productPrice">{this.state.producto.precio}</li>
-                            <li className="productDiscount">descuento del {this.state.producto.descuento}%</li>
-                        </ul>
+    //component did mount
+    useEffect(() => {
+        getConsultas.getProducto(barra.id).then(prod => { modProducto(prod); })
+    }, [barra.id]);
+
+    return (
+        <React.Fragment>
+            <article className="productDetail">
+                <div className='productHead'>
+                    <div>
+                        <img className='imagenProd' src={`/img/productosImagenes/${producto.imagen}`} alt='imagen del producto' />
                     </div>
-                    <p className="productDescription">{this.state.producto.descripcion}</p>
-                </article>
-
-            </React.Fragment>
-        );
-    }
+                    <ul className="productStats">
+                        <li className="productName">{producto.nombre}</li>
+                        <li className="productPrice">{producto.precio}</li>
+                        <li className="productDiscount">descuento del {producto.descuento}%</li>
+                    </ul>
+                </div>
+                <p className="productDescription">{producto.descripcion}</p>
+            </article>
+        </React.Fragment>
+    );
 }
 
 export default Producto;

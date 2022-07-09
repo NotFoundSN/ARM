@@ -1,18 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Tabla from '../Tabla/Tabla';
-import '../card.css';
+import getConsultas from '../../Servicios/getConsultas';
 
-function Productos(props) {
+function ProductosCategoria(props) {
+    const [productos, modProductos] = useState([]);
+    //component did mount
+    useEffect(() => {
+        getConsultas.getProductos().then(prod => { modProductos(prod); })
+    }, []);
+
     return (
         <React.Fragment>
-            <div className="contenedor shadow">
-                <div className='row'>
-                <Tabla productos={props.productos} key={`Tabla`}/>
-                </div>
+            <div>
+                <Tabla productos={productos} key={`Tabla`} />
             </div>
+
         </React.Fragment>
     );
 }
 
-export default Productos;
+export default ProductosCategoria;

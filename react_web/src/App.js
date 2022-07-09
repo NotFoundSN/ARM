@@ -1,14 +1,12 @@
-//import logo from './logo.svg';
 import './App.css';
 import Header from './Componentes/Header/Header';
-//import SideBar from './Componentes/SideBar/SideBar';
-import Datos from './Componentes/Datos/Datos';
+import MainMenu from './Componentes/MainMenu/MainMenu';
 
 function App() {
   return (
       <div className="App">
         <Header />
-        <Datos />
+        <MainMenu />
       </div>
   );
 }
